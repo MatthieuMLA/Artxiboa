@@ -101,6 +101,12 @@ li a:hover:not(.active) {
 
 .cover-flow {
 
+    position:relative;
+    left :35px;
+    top : 50px;
+    border : 1px solid #f1112c;
+    
+
     .swiper {
         width: 100%;
         padding-top: 50px;
