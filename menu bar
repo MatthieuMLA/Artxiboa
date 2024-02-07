@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Bar Example</title>
+</head>
+<body>
+    <ul>
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#creation">Création des documents</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Gestion des documents</a>
+            <div class="dropdown-content">
+                <a href="#sub-item1">Sub Item 1</a>
+                <a href="#sub-item2">Sub Item 2</a>
+            </div>
+        </li>
+        <li><a href="#archive">Archive</a></li>
+    </ul>
+</body>
+</html>
