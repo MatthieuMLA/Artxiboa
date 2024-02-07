@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Accueil</title>
+    <link rel="stylesheet" href="accueil.css">
+</head>
+
+<body>
+
+    <ul>
+
+        <li><a href="#home">Accueil</a></li>
+
+        <li><a href="#creation">Création des documents</a></li>
+
+        <li class="dropdown">
+
+            <a href="javascript:void(0)" class="dropbtn">Gestion des documents</a>
+
+            <div class="dropdown-content">
+
+                <a href="#sub-item1">Documents à Valider</a>
+
+                <a href="#sub-item2">Documents Dernierement Refusés</a>
+
+            </div>
+
+        </li>
+
+        <li class="cover-flow">
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-01.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-02.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-03.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-04.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-05.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-06.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-07.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-08.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-09.jpg)"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <!-- Swiper JS -->
+              <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+            
+              <!-- Swiper Init Script -->
+              <script>
+                var swiper = new Swiper(".mySwiper", {
+                  effect: "coverflow",
+                  grabCursor: true,
+                  centeredSlides: true,
+                  slidesPerView: "auto",
+                  pagination: ".swiper-pagination",
+                  loop: true,
+                  coverflowEffect: {
+                    rotate: 30,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                  },
+                });
+              </script>
+
+        </li>
+
+        <li>
+
+            <a href="#pdf-link1" target="_blank">Dernier Devis.V1 (PDF)</a>
+
+        </li>
+
+        <li>
+
+            <a href="#pdf-link2" target="_blank">Version non admin Q (PDF)</a>
+
+        </li>
+
+        <li>
+
+            <a href="#pdf-link3" target="_blank">Avant-dernier Devis.V3 (PDF)</a>
+
+        </li>
+
+        <li>
+
+            <a href="#pdf-link4" target="_blank">Derniere Facture.V2 (PDF)</a>
+
+        </li>
+
+    </ul>
+
+</body>
+
+</html>
