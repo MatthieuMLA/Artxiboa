@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Trier par : <input type="text" id="search-box" placeholder="Rechercher..."></h1>
+		<ul>
+			<li><a class="active" href="#">Ordre alphabétique</a></li>
+			<li><a href="#">Date</a></li>
+		</ul>
+	</div>
+</body>
+</html>
