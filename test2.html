@@ -1,89 +1,98 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="main.css">
-
+  <title>Accueil</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/Accueil2.css">
 </head>
 
 <body>
+  <header>
+    <div class="container">
+        <img src="./media/pictures/K2M.jpg" alt="K2M" class="image">
+        <div class="overlay">
+          <div class="text">Maxime FAURA, Matthieu MORLA et Karim IGHIOUER</div>
+        </div>
+      </div>
+      <h3>Accueil</h3>
+      <div class="div1"><i class="fa-solid fa-circle-user"></i><a href="https://www.cyberuniversity.com/post/information-personnelle-ou-pii-definition-et-importance-en-cybersecurite">Username</a></div>
+    </header>
+  <ul>
+    <li><a href="Accueil2.html">Raffraichir la page</a></li>
+    <li><a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate">Créer une playlist</a></li>
+    <li><a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate">Ajouter une musique à une playlist</a></li>
+    <li style="float:right"><a class="active" href="Login.html">Déconnexion</a></li>
+  </ul>
 
-	<div class="navbar">
+  <div class="flex-container">
 
-		<a href="index.html">Accueil</a>
-
-		<a href="creation.html">Création de document</a>
-
-		<div class="dropdown">
-
-			<button class="dropbtn">Gestion de document</button>
-
-			<div class="dropdown-content">
-
-				<a href="gestion1.html">Sous-item 1</a>
-
-				<a href="gestion2.html">Sous-item 2</a>
-
-			</div>
-
-		</div>
-
-		<a href="archivage.html">Archivage</a>
-
-	</div>
-
-	<div class="box">
-
-		<h3>Coverflow 1</h3>
-
-		<p>
-			<div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-01.jpg)"></div>
-                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-02.jpg)"></div>
-                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-03.jpg)"></div>
-                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-04.jpg)"></div>
-                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-05.jpg)"></div>
-                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-06.jpg)"></div>
-                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-07.jpg)"></div>
-                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-08.jpg)"></div>
-                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-09.jpg)"></div>
-                </div>
-                <div class="swiper-pagination"></div>
-              </div>
-              <!-- Swiper JS -->
-              <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-            
-              <!-- Swiper Init Script -->
-              <script>
-                var swiper = new Swiper(".mySwiper", {
-                  effect: "coverflow",
-                  grabCursor: true,
-                  centeredSlides: true,
-                  slidesPerView: "auto",
-                  pagination: ".swiper-pagination",
-                  loop: true,
-                  coverflowEffect: {
-                    rotate: 30,
-                    stretch: 0,
-                    depth: 100,
-                    modifier: 1,
-                    slideShadows: true,
-                  },
-                });
-              </script>
-		</p>
-
-	</div>
-
-	<div class="box2">
-        
+    <div class="box">Mes Playlists
+      <div class="div2">
+          <div class="h1">
+            <a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate"><i class="fa-solid fa-file"></i></a>List 1      Chill<i class="fa-solid fa-music"></i><i class="fa-solid fa-pen"></i><br>
+            <a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate"><i class="fa-solid fa-file"></i></a>List 2      Hard<i class="fa-solid fa-music"></i><i class="fa-solid fa-pen"></i><br>
+            <a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate"><i class="fa-solid fa-file"></i></a>List 3      Rock<i class="fa-solid fa-music"></i><i class="fa-solid fa-pen"></i><br>
+            <a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate"><i class="fa-solid fa-file"></i></a>List 4      Pop<i class="fa-solid fa-music"></i><i class="fa-solid fa-pen"></i><br>
+            <a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate"><i class="fa-solid fa-file"></i></a>List 5      Samba<i class="fa-solid fa-music"></i><i class="fa-solid fa-pen"></i><br>
+            <a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate"><i class="fa-solid fa-file"></i></a>List 6      Techno<i class="fa-solid fa-music"></i><i class="fa-solid fa-pen"></i><br>
+            <a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate"><i class="fa-solid fa-file"></i></a>List 7      Hardwell<i class="fa-solid fa-music"></i><i class="fa-solid fa-pen"></i><br>
+            <a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate"><i class="fa-solid fa-file"></i></a>List 8      DUB<i class="fa-solid fa-music"></i><i class="fa-solid fa-pen"></i><br>
+            <a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate"><i class="fa-solid fa-file"></i></a>List 9      Reggae<i class="fa-solid fa-music"></i><i class="fa-solid fa-pen"></i><br>
+            <a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate"><i class="fa-solid fa-file"></i></a>List 1      Chill 2<i class="fa-solid fa-music"></i><i class="fa-solid fa-pen"></i><br>
+            <a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate"><i class="fa-solid fa-file"></i></a>List 1      Hard 2<i class="fa-solid fa-music"></i><i class="fa-solid fa-pen"></i><br>
+            <a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate"><i class="fa-solid fa-file"></i></a>List 1      Rock 2<i class="fa-solid fa-music"></i><i class="fa-solid fa-pen"></i><br>
+            <a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate"><i class="fa-solid fa-file"></i></a>List 1      Pop 2<i class="fa-solid fa-music"></i><i class="fa-solid fa-pen"></i><br>
+            <a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate"><i class="fa-solid fa-file"></i></a>List 1      Samba 2<i class="fa-solid fa-music"></i><i class="fa-solid fa-pen"></i><br>
+            <a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate"><i class="fa-solid fa-file"></i></a>List 1      Techno 2<i class="fa-solid fa-music"></i><i class="fa-solid fa-pen"></i><br>
+            <a href="https://translate.google.fr/?hl=fr&sl=fr&tl=es&text=Page%20morte&op=translate"><i class="fa-solid fa-file"></i></a>List 1      Ca suffit<i class="fa-solid fa-music"></i><i class="fa-solid fa-pen"></i><br>         
+          </div>
+      </div>
     </div>
+
+    <div class="box">
+      <table id="customers">
+        <tr>
+          <th>Listes du moment</th>
+          <th>Noms</th>
+          <th>Ecouter</th>
+        </tr>
+        <tr>
+          <td>Best Electro 2022 </td>
+          <td>Avicii</td>
+          <td><i class="fa-solid fa-music"></i></td>
+        </tr>
+        <tr>
+          <td>Rap</td>
+          <td>50 Cent</td>
+          <td><i class="fa-solid fa-music"></i></td>
+        </tr>
+        <tr>
+          <td>Reggae</td>
+          <td>Bob Marley</td>
+          <td><i class="fa-solid fa-music"></i></td>
+        </tr>
+        <tr>
+          <td>Classique</td>
+          <td>Beethoven</td>
+          <td><i class="fa-solid fa-music"></i></td>
+        </tr>
+        <tr>
+          <td>Zouk</td>
+          <td>DJ Styx</td>
+          <td><i class="fa-solid fa-music"></i></td>
+        </tr>
+        <tr>
+          <td>RockNRoll</td>
+          <td>ACDC</td>
+          <td><i class="fa-solid fa-music"></i></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script src="https://kit.fontawesome.com/faf132daba.js" crossorigin="anonymous"></script>
+  <div class="footer">
+    <h3><i class="fa-solid fa-music"></i>Freed from desire<i class="fa-solid fa-music"></i> La musique incontournable pour fêter la 3ème étoile de l'équipe de france !!!</h3>
+  </div>
+</body>
