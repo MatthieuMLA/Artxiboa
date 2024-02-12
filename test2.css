@@ -28,7 +28,7 @@ html {
   .flex-container {
     display: flex;
     flex-wrap: nowrap;
-    background-color: #DDD0C8);
+    background-color: #DDD0C8;
   }
   
   #grad {
@@ -86,7 +86,7 @@ html {
   }
   
   #customers tr:nth-child(even) {
-    background-color: rgb(183, 206, 230);
+    background-color: #323232;
   }
   
   #customers tr:hover {
@@ -97,7 +97,7 @@ html {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: #081D32;
+    background-color: #323232;
     color: white;
   }
   
@@ -122,7 +122,7 @@ html {
     width: 200%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #081D32;
+    background-color: #323232;
   }
   
   .container:hover .overlay {
@@ -143,7 +143,7 @@ html {
   
   a:link,
   a:visited {
-    background-color: #00ced1;
+    background-color: #323232;
     color: ghostwhite;
     padding: 15px 25px;
     text-align: center;
@@ -152,7 +152,7 @@ html {
   }
   
   .div2 {
-    background: rgb(158, 194, 210);
+    background: #DDD0C8;
     color: black;
     padding: 15px;
     width: 95%;
