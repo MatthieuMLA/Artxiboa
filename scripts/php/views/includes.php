@@ -12,7 +12,22 @@
         <header>
             <img src="media/brandLogo.png" alt="Brand Logo" height="75" title="Artxiboa"></a>
             <h1>Artxiboa</h1>
+            <div class="div1"><h3><?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname']; ?></h3></div>
         </header>
+        <?php
+    }
+
+    function include_logout() {
+        ?>
+        <!-- A form to logout -->
+        <!-- It redirects to the form controller -->
+        <!-- Note that this could have been done with a simple link and a $_GET parameter -->
+        <form method="post" action="loginController.php">
+            <fieldset>
+                <legend>Logout</legend>
+                <button type="submit">Logout</button>
+            </fieldset>
+        </form>
         <?php
     }
 
@@ -29,11 +44,12 @@
                     </div>
                 </li>
             <li><a href="#archive">Archive</a></li>
+            <li style="float:right"><a class="active" href="loginController.php">Déconnexion</a></li>
         </ul>
         <?php
     }
 
-    function connexion_form() {
+    function include_connexion_form() {
         ?>
         <form method="post" action="loginController.php">
             <fieldset>

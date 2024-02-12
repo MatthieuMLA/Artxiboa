@@ -26,6 +26,7 @@
         
         <!-- PHP only used to display stuff -->
         <?php include_header(); ?>
+        <?php include_connexion_form(); ?>
 
         <?php 
             // if an error happened

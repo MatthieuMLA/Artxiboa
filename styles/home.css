@@ -1,0 +1,181 @@
+html {
+    background-color: #DDD0C8
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #DDD0C8;
+    margin-left: 10.8vh;
+    margin-right: 10.8vh;
+}
+
+header {
+    border-radius: 25px;
+    background-color: #323232;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    background-color: #323232;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #DDD0C8;
+}
+
+#grad {
+    background-image: linear-gradient(red, yellow);
+}
+
+.flex-container .box {
+    background-color: #DDD0C8;
+    width: 50%;
+    margin: 10px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 30px;
+}
+
+ul {
+    border-radius: 25px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #DDD0C8;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #081D32;
+}
+
+li a.active {
+    background-color: #aa1504;
+}
+
+#customers {
+    font-family: 'Trebuchet MS', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td,
+#customers th {
+    border: 5px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+    background-color: #323232;
+}
+
+#customers tr:hover {
+    background-color: #ddd;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #323232;
+    color: white;
+}
+
+.container {
+    position: relative;
+    width: 10%;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 200%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #323232;
+}
+
+.container:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 17px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+a:link,
+a:visited {
+    background-color: #323232;
+    color: ghostwhite;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.div2 {
+    background: #DDD0C8;
+    color: black;
+    padding: 15px;
+    width: 95%;
+    height: 500px;
+    overflow: scroll;
+    border: 1px solid #ccc;
+}
+
+ol.u {
+    list-style-type: none;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+
+p.big {
+    line-height: 1.8;
+}
+
+.h1 {
+    text-align: left;
+}
