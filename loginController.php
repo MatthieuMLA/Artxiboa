@@ -62,9 +62,9 @@
     // and then call the correct view
     // the form if not logged in, the welcome page if logged in
     if (isset($_SESSION['firstname'])) {
-        require_once(__DIR__."/scripts/php/views/welcomePage.php");
+        require_once(__DIR__."/scripts/php/views/home.php");
     }
     else {
-        require_once(__DIR__."/scripts/php/views/loginExample.php");
+        require_once(__DIR__."/scripts/php/views/login.php");
     }
 
