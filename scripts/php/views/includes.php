@@ -10,8 +10,8 @@
     function include_header() {
         ?>
         <header>
-            <h1>The main title</h1>
-            <h2>Just a sub title</h2>
+            <img src="media/brandLogo.png" alt="Brand Logo" height="75" title="Artxiboa"></a>
+            <h1>Artxiboa</h1>
         </header>
         <?php
     }

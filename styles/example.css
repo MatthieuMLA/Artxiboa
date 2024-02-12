@@ -16,11 +16,16 @@ body {
     background-color: white;
 }
 
-h1 {
+header {
     text-align: center;
+    padding: 10px;
+}
+
+h1 {
+    /*text-align: center;*/
     font-size: 2em;
-    color: grey;
-    border-bottom: thin goldenrod solid;
+    color: black;
+    border-bottom: thick goldenrod solid;
     margin-top: 0px;
 }
 
@@ -37,6 +42,40 @@ h2::before, h2::after {
     color: red;
 }
 
+body form {
+    text-align: center;
+    width: 60%;
+    padding-left: 20%;
+}
+
+body form fieldset {
+    display: grid;
+    margin: 20px;
+    text-align: end;
+    align-content: end;    
+}
+
+body form fieldset div{
+    display: inline;
+    
+}
+
+body form fieldset div input{
+    margin: 5px;
+    width: 55%;
+}
+
+label{
+    color: red;
+    text-size-adjust: 10px;
+}
+
+body form fieldset button{
+    margin: 15px; 
+    text-align: center;
+    width: 55px;
+    align-items: end;
+}
 
 footer {
     background-color: darkgrey;
@@ -59,7 +98,7 @@ footer {
 
 /* fancy main section */
 main {
-    background-color: lightgrey;
+    background-color: lightgray;
     border: thin solid grey;
     padding: 1%;
     margin: 1%;

@@ -36,10 +36,29 @@
 
         <form method="post" action="loginController.php">
             <fieldset>
-                <legend>Login</legend>
+                <legend>Se Connecter</legend>
+                <div>
+                Nom d'utilisateur
+                <label for="warning">
+                    *
+                </label>
                 <input type="text" placeholder="login" id="login" name="login">
+                </div>
+                <div>
+                Mot de passe
+                <label for="warning">
+                    *
+                </label>
                 <input type="password" placeholder='password' id='pwd' name="pwd">
+                </div>
+                <div>
+                <label for="button">
                 <button type="submit">Submit</button>
+                </label>
+                <label for="warning">
+                    * Champs obligatoires
+                </label>
+                </div>
             </fieldset>
         </form>
 
