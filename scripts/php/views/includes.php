@@ -19,7 +19,7 @@
     function include_menubar() {
         ?>
         <ul>
-                <li><a href="home">Accueil</a></li>
+                <li><a href="#home">Accueil</a></li>
                 <li><a href="#creation">Création des documents</a></li>
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn">Gestion des documents</a>

@@ -1,0 +1,176 @@
+/* 
+Example CSS file for the tai project
+
+* @author: w.delamare
+ * @date: Dec. 2023
+*/
+html {
+    background-color: black;
+}
+
+
+body {
+    width: 90%;
+    margin: 0px auto;
+    height: 100vh;
+    background-color: black;
+}
+
+header {
+    text-align: center;
+    padding: 10px;
+}
+
+h1 {
+    /*text-align: center;*/
+    font-size: 2em;
+    color: white;
+    border-bottom: thick goldenrod solid;
+    margin-top: 0px;
+}
+
+h2 {
+    text-align: right;
+    /* font-size: 0.5em; */
+    padding-right: 2em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+}
+
+h2::before, h2::after {
+    content: "\"";
+    color: red;
+}
+
+body form {
+    text-align: center;
+    width: 60%;
+    padding-left: 20%;
+    color: white;
+}
+
+body form fieldset {
+    display: grid;
+    margin: 20px;
+    text-align: end;
+    align-content: end;    
+}
+
+body form fieldset div{
+    display: inline;
+    
+}
+
+body form fieldset div input{
+    margin: 5px;
+    width: 55%;
+}
+
+label{
+    color: red;
+    text-size-adjust: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a,
+li a:hover,
+li a:focus {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+body form fieldset button{
+    margin: 15px; 
+    text-align: center;
+    width: 55px;
+    align-items: end;
+}
+
+footer {
+    background-color: darkgrey;
+    text-align: center;
+    padding: 1%;
+    position: absolute;
+    bottom: 0px;
+    margin: 0px;
+    width: 88%;
+}
+
+
+.error_message {
+    border: thin red solid;
+    background-color: lightcoral;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+}
+
+/* fancy main section */
+main {
+    background-color: lightgray;
+    border: thin solid grey;
+    padding: 1%;
+    margin: 1%;
+    border-radius: 5px;
+}
+
+/* Modern h3 */
+h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5em;
+    color: darkblue;
+    border-bottom: thin solid darkblue;
+    padding-bottom: 0.5em;
+    /* horizontal line after the text */
+    display: inline-block;
+    position: relative;
+    
+}
