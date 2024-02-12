@@ -20,12 +20,23 @@
         
         <!-- PHP only used to display stuff -->
         <?php include_header(); ?>
-
+        <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#creation">Création des documents</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Gestion des documents</a>
+                    <div class="dropdown-content">
+                        <a href="#sub-item1">Visualisation des documents</a>
+                        <a href="#sub-item2">Sub tier3</a>
+                    </div>
+                </li>
+            <li><a href="#archive">Archive</a></li>
+        </ul>
 
         <main>
             <h3>Welcome <?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname'] . "!!"; ?></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            
+
 
             <!-- A form to logout -->
             <!-- It redirects to the form controller -->
