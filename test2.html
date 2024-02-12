@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+
+	<div class="navbar">
+
+		<a href="index.html">Accueil</a>
+
+		<a href="creation.html">Création de document</a>
+
+		<div class="dropdown">
+
+			<button class="dropbtn">Gestion de document</button>
+
+			<div class="dropdown-content">
+
+				<a href="gestion1.html">Sous-item 1</a>
+
+				<a href="gestion2.html">Sous-item 2</a>
+
+			</div>
+
+		</div>
+
+		<a href="archivage.html">Archivage</a>
+
+	</div>
+
+	<div class="box">
+
+		<h3>Coverflow 1</h3>
+
+		<p>
+			<div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-01.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-02.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-03.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-04.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-05.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-06.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-07.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-08.jpg)"></div>
+                  <div class="swiper-slide" style="background-image:url(../Artxiboa/asset/image/slide-09.jpg)"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <!-- Swiper JS -->
+              <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+            
+              <!-- Swiper Init Script -->
+              <script>
+                var swiper = new Swiper(".mySwiper", {
+                  effect: "coverflow",
+                  grabCursor: true,
+                  centeredSlides: true,
+                  slidesPerView: "auto",
+                  pagination: ".swiper-pagination",
+                  loop: true,
+                  coverflowEffect: {
+                    rotate: 30,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                  },
+                });
+              </script>
+		</p>
+
+	</div>
+
+	<div class="box2">
+        
+    </div>
