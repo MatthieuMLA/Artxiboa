@@ -1,8 +1,14 @@
 <?php
 
 // if we are in the local environment
+/*
 $host = "localhost";
 $dbname = "tai";
+$user = "root";
+$pwd = "";*/
+
+$host = "localhost";
+$dbname = "artxiboa";
 $user = "root";
 $pwd = "";
 
