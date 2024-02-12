@@ -8,6 +8,35 @@
  */
 
     function include_header() {
+    ?>
+    <header>
+        <img src="media/brandLogo.png" alt="Brand Logo" height="75" title="Artxiboa"></a>
+        <h1>Artxiboa</h1>
+    </header>
+    <?php
+    }
+
+    function include_connexion_info() {
+        ?>
+        <h4>
+            Pour supérieur hiérarchique
+            <br>
+            Login : donut
+            <br>
+            Mot de passe : 123
+            <br>
+            <br>
+            Pour employé
+            <br>
+            Login : el barto
+            <br>
+            Mot de passe : EatMyShorts
+        </h4>
+        <?php
+        }
+        
+
+    function include_header_home() {
         ?>
         <header>
             <img src="media/brandLogo.png" alt="Brand Logo" height="75" title="Artxiboa"></a>
@@ -35,7 +64,7 @@
         ?>
         <ul>
                 <li><a href="#home">Accueil</a></li>
-                <li><a href="#creation">Création des documents</a></li>
+                <li><a href="creationController.php">Création des documents</a></li>
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn">Gestion des documents</a>
                     <div class="dropdown-content">
@@ -44,14 +73,14 @@
                     </div>
                 </li>
             <li><a href="#archive">Archive</a></li>
-            <li style="float:right"><a class="active" href="loginController.php">Déconnexion</a></li>
+            <li style="float:right"><a class="active" href="loginController_target.php">Déconnexion</a></li>
         </ul>
         <?php
     }
 
     function include_connexion_form() {
         ?>
-        <form method="post" action="loginController.php">
+        <form method="post" action="loginController_target.php">
             <fieldset>
                 <legend>Se Connecter</legend>
                 <div>

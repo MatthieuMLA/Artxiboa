@@ -28,16 +28,16 @@ class UserModel extends DBModel {
         }
         // The request uses the MD5() functions since password should not be stored
         // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
-        $request = "SELECT * FROM utilisateur WHERE email=:login AND MdP=:password";
+        $request = "SELECT * FROM user WHERE login=:login AND password=MD5(:password)";
         $statement = $this->db->prepare($request);
         $statement->execute([
-            "email" => $login,
-            "MdP" => $password
+            "login" => $login,
+            "password" => $password
         ]);
         $entries = $statement->fetchAll();
         if (count($entries) == 1) {
-            $result["Prenom"] = $entries[0]['Prenom'];
-            $result["Nom"] = $entries[0]['Nom'];
+            $result["firstname"] = $entries[0]['firstname'];
+            $result["lastname"] = $entries[0]['lastname'];
         }
         return $result;
     }
@@ -50,4 +50,3 @@ class UserModel extends DBModel {
     // (e.g., if the user is not added, the controller will call the view to display the login form with an error message)
     
 }
-

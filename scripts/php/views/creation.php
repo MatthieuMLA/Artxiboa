@@ -1,12 +1,3 @@
-<!-- 
-    Example HTML file to showcase a simple login form which uses
-        - a php controller script (logic-related aspects) that calls a php model script (data-related aspects)
-        - a php view script (UI-related aspects)
-
-* @author: w.delamare
-* @date: Dec. 2023
- -->
-
 <?php
     // do all necessary includes first
     // __DIR__ allows you to use relative paths explicitly
@@ -26,7 +17,6 @@
         
         <!-- PHP only used to display stuff -->
         <?php include_header(); ?>
-        <?php include_connexion_form(); ?>
         <?php include_connexion_info(); ?>
 
         <?php 

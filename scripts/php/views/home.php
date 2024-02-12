@@ -19,7 +19,7 @@
     <body>
         
         <!-- PHP only used to display stuff -->
-        <?php include_header(); ?>
+        <?php include_header_home(); ?>
         
         <?php include_menubar(); ?>
 
