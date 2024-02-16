@@ -5,12 +5,12 @@ Example CSS file for the tai project
  * @date: Dec. 2023
 */
 html {
-    background-color: #DDD0C8
+    background-color: #DDD0C8;
 }
 
 
 body {
-    width: 90%;
+    width: 100%;
     margin: 0px auto;
     height: 100vh;
     background-color: #DDD0C8;
@@ -43,30 +43,39 @@ h2::before, h2::after {
     color: red;
 }
 
+h4 {
+    margin-left: 5%;
+}
+
 body form {
     text-align: center;
-    width: 60%;
-    margin-left: 20%;
-    padding-bottom: 1px;
+    width: 50%;
+    align-content: center;
     color: white;
-    background-color: #333;
+    margin-left: 25%;
+    margin-top: 10%;
 }
 
 body form fieldset {
+    border-radius: 2%;
     display: grid;
-    margin: 20px;
-    text-align: end;
-    align-content: end;    
+    text-align: start;
+    align-content: start;   
+    background-color: #333;
 }
 
 body form fieldset div{
+    display: grid;
+    margin: 5px;
+    
+}
+body form fieldset div div{
     display: inline;
     
 }
 
 body form fieldset div input{
-    margin: 5px;
-    width: 55%;
+    width: 98%;
 }
 
 label{
@@ -144,7 +153,7 @@ footer {
     position: absolute;
     bottom: 0px;
     margin: 0px;
-    width: 88%;
+    width: 100%;
 }
 
 

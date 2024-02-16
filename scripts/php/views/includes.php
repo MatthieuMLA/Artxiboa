@@ -80,34 +80,37 @@
 
     function include_connexion_form() {
         ?>
-        <form method="post" action="loginController_target.php">
+        <form method="post" action="loginController_target.php" class="login-form">
             <fieldset>
-                <legend>Se Connecter</legend>
                 <div>
-                Nom d'utilisateur
-                <label for="warning">
+                    <div>
+                    Nom d'utilisateur
+                    <label for="warning">
                     *
+                    </div>
                 </label>
                 <input type="text" placeholder="login" id="login" name="login">
                 </div>
                 <div>
-                Mot de passe
-                <label for="warning">
+                    <div>
+                    Mot de passe
+                    <label for="warning">
                     *
-                </label>
+                    </label>
+                    </div>
                 <input type="password" placeholder='password' id='pwd' name="pwd">
                 </div>
                 <div>
                 <label for="button">
                 <button type="submit">Submit</button>
                 </label>
+                </div>
                 <label for="warning">
                     * Champs obligatoires
                 </label>
-                </div>
             </fieldset>
         </form>
-        <?php
+    <?php
     }
 
 
