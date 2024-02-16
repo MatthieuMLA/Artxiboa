@@ -63,16 +63,16 @@
     function include_menubar() {
         ?>
         <ul class="menubar">
-                <li><a href="#home">Accueil </a></li>
+                <li><a href="homeController.php">Accueil </a></li>
                 <li><a href="creationController.php">Création</a></li>
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn">Gestion</a>
                     <div class="dropdown-content">
-                        <a href="#visualisation-document">Visualiser des documents</a>
-                        <a href="#validation-document">Valider des documents</a>
+                        <a href="gestionController.php">Visualiser des documents</a>
+                        <a href="gestionController.php">Valider des documents</a>
                     </div>
                 </li>
-            <li><a href="#archive">Archive</a></li>
+            <li><a href="archiveController.php">Archive</a></li>
             <li><a class="active" href="loginController_target.php">Déconnexion</a></li>
         </ul>
         <?php
@@ -80,7 +80,7 @@
 
     function include_connexion_form() {
         ?>
-        <form method="post" action="loginController_target.php" class="login-form">
+        <form method="post" action="home.php" class="login-form">
             <fieldset>
                 <div>
                     <div>

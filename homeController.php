@@ -63,7 +63,7 @@
     // the form if not logged in, the welcome page if logged in
 
 
-    if (isset($_SESSION['firstname'])) {
+    if (session_start()) {
         require(__DIR__."/scripts/php/views/home.php");
     }
     else {

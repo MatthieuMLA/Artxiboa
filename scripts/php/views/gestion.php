@@ -18,7 +18,7 @@
         <!-- PHP only used to display stuff -->
         <?php include_header_home(); ?>
         <?php include_menubar(); ?>
-        Creation
+        Gestion
         <?php 
             // if an error happened
             if (isset($something_to_say)) {

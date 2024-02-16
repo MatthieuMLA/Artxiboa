@@ -10,7 +10,7 @@
  * @date: Dec. 2023
  */
 
-require_once("DBModel.php");
+require("DBModel.php");
 
 class UserModel extends DBModel {
 
