@@ -62,18 +62,18 @@
 
     function include_menubar() {
         ?>
-        <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="creationController.php">Création des documents</a></li>
+        <ul class="menubar">
+                <li><a href="#home">Accueil </a></li>
+                <li><a href="creationController.php">Création</a></li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Gestion des documents</a>
+                    <a href="javascript:void(0)" class="dropbtn">Gestion</a>
                     <div class="dropdown-content">
-                        <a href="#visualisation-document">Visualisation des documents</a>
-                        <a href="#validation-document">Validation des documents</a>
+                        <a href="#visualisation-document">Visualiser des documents</a>
+                        <a href="#validation-document">Valider des documents</a>
                     </div>
                 </li>
             <li><a href="#archive">Archive</a></li>
-            <li style="float:right"><a class="active" href="loginController_target.php">Déconnexion</a></li>
+            <li><a class="active" href="loginController_target.php">Déconnexion</a></li>
         </ul>
         <?php
     }
@@ -102,7 +102,7 @@
                 </div>
                 <div>
                 <label for="button">
-                <button type="submit">Submit</button>
+                <button class="up" type="submit">Se connecter</button>
                 </label>
                 </div>
                 <label for="warning">
