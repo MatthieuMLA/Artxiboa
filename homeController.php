@@ -13,8 +13,6 @@
     // __DIR__ allows you to use relative paths explicitly
     require(__DIR__."/scripts/php/models/UserModel2.php");
 
-
-
     // Check if the user comes from the form...
     if (isset($_POST['login']) && isset($_POST['pwd'])) {
 
@@ -46,10 +44,11 @@
 
     // If the user wants to logout, simply destroy the session
     // (and hence redirect to the login form)
+    /*
     if (isset($_POST['logout'])) {
         session_start();
         session_destroy();
-    }
+    }*/
 
 
     // Now, let's call the view.
@@ -62,11 +61,12 @@
     // and then call the correct view
     // the form if not logged in, the welcome page if logged in
 
-
-    if (session_start()) {
+    if ((session_status() == PHP_SESSION_ACTIVE || session_start()) && !isset($something_to_say)) {
         require(__DIR__."/scripts/php/views/home.php");
     }
     else {
         require(__DIR__."/scripts/php/views/login.php");
+        //$_SESSION = array();
+        //session_destroy();
     }
 

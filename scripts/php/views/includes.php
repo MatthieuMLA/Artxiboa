@@ -73,14 +73,36 @@
                     </div>
                 </li>
             <li><a href="archiveController.php">Archive</a></li>
-            <li><a class="active" href="loginController_target.php">Déconnexion</a></li>
+            <li><a class="active" type="submit" href="loginController_target.php">Déconnexion</a></li>
         </ul>
+        <?php
+    }
+
+    function include_creation_buttons() {
+        ?>
+        <div class="buttoncrea">
+            <div>
+                <img src="media/devis.png" alt="Devis" height="170"></a>
+                <button>Créer un devis</button>
+                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+            </div>
+            <div>
+                <img src="media/facture.png" alt="Facture" height="170"></a>
+                <button>Créer une facture</button>
+                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+            </div>
+            <div>
+                <img src="media/import.png" alt="Importer" height="170"></a>
+                <button>Importer un document</button>
+                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+            </div>
+    </div>
         <?php
     }
 
     function include_connexion_form() {
         ?>
-        <form method="post" action="home.php" class="login-form">
+        <form method="post" action="homeController.php" class="login-form">
             <fieldset>
                 <div>
                     <div>

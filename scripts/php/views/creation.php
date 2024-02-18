@@ -11,14 +11,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/home.css">
-        <title>Artxiboa - Se Connecter</title>
+        <title>Artxiboa - Creation</title>
     </head>
     <body>
         
         <!-- PHP only used to display stuff -->
         <?php include_header_home(); ?>
         <?php include_menubar(); ?>
-        Creation
+
+        <?php include_creation_buttons(); ?>
         <?php 
             // if an error happened
             if (isset($something_to_say)) {

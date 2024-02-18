@@ -27,6 +27,14 @@ h1{
     margin-left: 5%;
 }
 
+h3{
+    color: #e0af90;
+    &:hover,
+    &:focus { 
+        color: #DDD0C8;
+    }
+}
+
 .flex-container {
     display: flex;
     flex-wrap: nowrap;
@@ -175,7 +183,6 @@ footer {
     padding: 1%;
     bottom: 0px;
     margin: 0px;
-    margin-top: 100%;
     width: 100%;
 }
 
@@ -237,3 +244,38 @@ li a:focus {
 .menubar .dropdown:hover .dropdown-content {
     display: block;
 }
+
+.buttoncrea {
+    display: inline-flex;
+    margin-top: 5%;
+}
+
+.buttoncrea button {
+    width: 100%;
+    height: 80px;
+    text-align: center;
+
+    &:hover { 
+        color: #323232;
+        background-color: #cdcdc7;
+        border-color: #cdcdc7;
+        font-weight: bold;
+    }
+}
+
+.buttoncrea div {
+    width: 30%;
+    margin: 2%;
+    text-align:center ;
+}
+
+.buttoncrea img{
+    margin-bottom: 20%;
+}
+
+p{
+    text-align:justify ;
+}
+
+
+
