@@ -18,14 +18,7 @@
         <!-- PHP only used to display stuff -->
         <?php include_header_home(); ?>
         <?php include_menubar(); ?>
-        
-        <?php 
-            // if an error happened
-            if (isset($something_to_say)) {
-                include_error_message($something_to_say);
-            }
-        ?>
-
+        <?php create_facture()?>
         <?php include_footer(); ?>
 
     </body>

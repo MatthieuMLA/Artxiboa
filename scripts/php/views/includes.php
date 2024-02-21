@@ -164,6 +164,42 @@
     <?php
     }
 
+    function include_display_file($RESULT){
+        $nb = count($RESULT);
+        echo "<p>Found " . $nb . " results.</p>";
+        echo("<ul class='display'>");
+        foreach($RESULT as $res){
+            echo "<li>" . $res["Titre"] . " - " . $res["Type"] . " - " . $res["Id_Utilisateur"] . " - " . $res["Date_creation"] . "</li>";
+        }
+        echo("</ul>");
+        if (isset($something_to_say)) {
+            include_error_message($something_to_say);
+        }
+    }
+
+    function create_facture() {
+        ?>
+        <h2>Information sur la facture</h2>
+        <div class="flex-container">
+            <div class='box_crea'>
+                <p>Sélectionner une zone à remplir</p>
+                <p>Lorem Ipsum</p>
+                <input type="text">
+                <p>Lorem Ipsum</p>
+                <input type="text">
+                <p>Lorem Ipsum</p>
+            </div>
+            <div class='box_crea'>
+                <div class='section_a_remplir'>
+                    <input type="text">
+                </div>
+                <div class='feedback'>
+                    <p>feedback</p>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
 
     function include_footer() {
         ?>

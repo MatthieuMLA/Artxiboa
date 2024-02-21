@@ -13,6 +13,9 @@
     // __DIR__ allows you to use relative paths explicitly
     require(__DIR__."/scripts/php/models/UserModel2.php");
 
+    $userModel = new UserModel();
+    $RESULT = $userModel->display_file();
+
     // Now, let's call the view.
     // If something to say, the view will display it
     // Otherwise, the view will simply display the login form

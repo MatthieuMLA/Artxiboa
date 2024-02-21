@@ -97,15 +97,8 @@ class UserModel extends DBModel {
         // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
         $request = "SELECT * FROM document";
         $statement = $this->db->prepare($request);
-//        $statement->execute([
-//            "login" => $login,
-//            "password" => $password
-//        ]);
-        $entries = $statement->fetchAll();
-        $i = 0;
-        if ($i < count($entries)) {
-            $result[$i] = $entries[0][$i];
-        }
+        $statement->execute();
+        $result = $statement->fetchAll();
         return $result;
     }
     

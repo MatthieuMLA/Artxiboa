@@ -33,8 +33,8 @@
     }*/
 
     $userModel = new UserModel();
-    $result = $userModel->display_file();
-    print_r($result);
+    $RESULT = $userModel->display_file();
+    //print_r($result);
     // Now, let's call the view.
     // If something to say, the view will display it
     // Otherwise, the view will simply display the login form
