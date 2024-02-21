@@ -74,7 +74,7 @@
                 }?>
 
             <li><a href="archiveController.php">Archive</a></li>
-            <li><a class="active" type="submit" href="loginController_target.php">Déconnexion</a></li>
+            <li><a class="active" type="submit" href="index.php">Déconnexion</a></li>
         </ul>
         <?php
     }
