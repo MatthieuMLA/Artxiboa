@@ -180,24 +180,55 @@
     function create_facture() {
         ?>
         <h2>Information sur la facture</h2>
+        <form method="post" action="creationFactureController.php">
         <div class="flex-container">
             <div class='box_crea'>
                 <p>Sélectionner une zone à remplir</p>
                 <p>Lorem Ipsum</p>
-                <input type="text">
-                <p>Lorem Ipsum</p>
-                <input type="text">
-                <p>Lorem Ipsum</p>
+                <input type="text" id="ContenuFacture" name="ContenuFacture">
             </div>
             <div class='box_crea'>
-                <div class='section_a_remplir'>
-                    <input type="text">
+                <div class='file_info'>
+                    <p>Titre</p>
+                    <input type="text" id="TitreFacture" name="TitreFacture">
+                    <p>Auteur : <?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname']; ?></p>
+                    <input type="text" id="IdUser" name="IdUser" value=<?php echo $_SESSION['Id']?> readonly>
+                    <p>Date : <?php echo date('Y-m-d'); ?></p>
                 </div>
                 <div class='feedback'>
-                    <p>feedback</p>
+                    <p>Feedback</p>
                 </div>
             </div>
         </div>
+        <button>Next</button>
+        </form>
+        <?php
+    }
+
+    function create_devis() {
+        ?>
+        <h2>Information sur le devis</h2>
+        <form method="post" action="creationController.php">
+        <div class="flex-container">
+            <div class='box_crea'>
+                <p>Sélectionner une zone à remplir</p>
+                <p>Lorem Ipsum</p>
+                <input type="text" id="ContenuFacture" name="ContenuFacture">
+            </div>
+            <div class='box_crea'>
+                <div class='file_info'>
+                    <p>Titre</p>
+                    <input type="text" id="TitreDevis" name="TitreDevis">
+                    <p>Auteur : <?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname']; ?></p>
+                    <p>Date : <?php echo date('Y-m-d'); ?></p>
+                </div>
+                <div class='feedback'>
+                    <p>Feedback</p>
+                </div>
+            </div>
+        </div>
+        <button>Next</button>
+        </form>
         <?php
     }
 

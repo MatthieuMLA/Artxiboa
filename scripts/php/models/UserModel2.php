@@ -81,7 +81,6 @@ class UserModel extends DBModel {
             $result["Id_Utilisateur"] = $entries[0]['Id_Utilisateur'];
             $result["Id_template"] = $entries[0]['Id_template'];
         }
-        print $result;
         return $result;
     }
 

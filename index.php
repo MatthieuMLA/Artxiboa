@@ -18,7 +18,7 @@
         session_destroy();
     }
 
-    $_SESSION = array();
+    //$_SESSION = array();
 
     // Check if the user comes from the form...
     if (isset($_POST['login']) && isset($_POST['pwd'])) {

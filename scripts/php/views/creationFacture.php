@@ -19,6 +19,14 @@
         <?php include_header_home(); ?>
         <?php include_menubar(); ?>
         <?php create_facture()?>
+
+        <?php 
+            // if an error happened
+            if (isset($something_to_say)) {
+                include_error_message($something_to_say);
+            }
+        ?>
+
         <?php include_footer(); ?>
 
     </body>

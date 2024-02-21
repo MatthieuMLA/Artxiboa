@@ -8,7 +8,7 @@
      * @date: Dec. 2023
      */
 
-    
+    $Id_user = "";
     // do all necessary includes first
     // __DIR__ allows you to use relative paths explicitly
     require(__DIR__."/scripts/php/models/UserModel2.php");
@@ -31,6 +31,8 @@
                 $_SESSION['firstname'] = $result['firstname'];
                 $_SESSION['lastname'] = $result['lastname'];
                 $_SESSION['Role'] = $result['Role'];
+                $_SESSION['Id'] = $result['Id'];
+                $Id_user = $result['Id'];
             }
             else {
                 // set the error message to be displayed in the view

@@ -8,10 +8,37 @@
      * @date: Dec. 2023
      */
 
-    
     // do all necessary includes first
     // __DIR__ allows you to use relative paths explicitly
     require(__DIR__."/scripts/php/models/UserModel2.php");
+    // Check if the user comes from the form...
+    if (isset($_POST['TitreFacture']) && isset($_POST['ContenuFacture'])) {
+
+        // check if all fields have an input
+        if (strlen($_POST['TitreFacture']) > 0 && strlen($_POST['ContenuFacture']) > 0) {
+            $userModel = new UserModel();
+            // Call the model to check if the user exists
+            // How is the information stored? In a database? In a file? In a cloud? In a cookie?
+            // The controller does not care about that. It just calls the model.
+            $currentDate = date('Y-m-d');
+            $Titre = $_POST['TitreFacture'];
+            $Contenu = $_POST['ContenuFacture'];
+            $result = $userModel->add_file($Titre, 'facture', $Contenu, $currentDate, 1, $Id_user, 2);
+            $result = array();
+        }
+        else {
+            // set the error message to be displayed in the view
+            $something_to_say = "Missing fields";  
+        }
+    }
+    else {
+        // set the error message to be displayed in the view
+        $something_to_say = "Missing fields";  
+    }
+
+
+
+
     /*
     $userModel = new UserModel();
     // Call the model to check if the user exists
