@@ -18,7 +18,6 @@
         <!-- PHP only used to display stuff -->
         <?php include_header_home(); ?>
         <?php include_menubar(); ?>
-
         <?php include_creation_buttons(); ?>
         <?php 
             // if an error happened

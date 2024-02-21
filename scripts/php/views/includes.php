@@ -63,18 +63,43 @@
     function include_menubar() {
         ?>
         <ul class="menubar">
-                <li><a href="homeController.php">Accueil </a></li>
-                <li><a href="creationController.php">Création</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Gestion</a>
-                    <div class="dropdown-content">
-                        <a href="gestionController.php">Visualiser des documents</a>
-                        <a href="gestionController.php">Valider des documents</a>
-                    </div>
-                </li>
+            <li><a href="homeController.php">Accueil </a></li>
+            <li><a href="creationController.php">Création</a></li>
+            <?php 
+                if ($_SESSION['Role'] == '1'){
+                    dropdown_sup();
+                } 
+                else{
+                    dropdown_normal();
+                }?>
+
             <li><a href="archiveController.php">Archive</a></li>
             <li><a class="active" type="submit" href="loginController_target.php">Déconnexion</a></li>
         </ul>
+        <?php
+    }
+
+    function dropdown_sup(){
+        ?>
+        <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Gestion</a>
+                    <div class="dropdown-content">
+                        <a href="gestionController.php">Modifier des documents</a>
+                        <a href="gestionController.php">Valider des documents</a>
+                    </div>
+        </li>
+    <?php
+    }
+
+    function dropdown_normal(){
+        ?>
+        <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Gestion</a>
+                    <div class="dropdown-content">
+                        <a href="gestionController.php">Modifier des documents</a>
+                        <a href="gestionController.php">Envoyer pour validation</a>
+                    </div>
+        </li>
         <?php
     }
 

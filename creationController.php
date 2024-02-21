@@ -23,7 +23,6 @@
 
     // and then call the correct view
     // the form if not logged in, the welcome page if logged in
-
     if (session_start()) {
         require(__DIR__."/scripts/php/views/creation.php");
     }

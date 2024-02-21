@@ -30,6 +30,7 @@
                 session_start();
                 $_SESSION['firstname'] = $result['firstname'];
                 $_SESSION['lastname'] = $result['lastname'];
+                $_SESSION['Role'] = $result['Role'];
             }
             else {
                 // set the error message to be displayed in the view
