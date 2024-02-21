@@ -39,6 +39,7 @@ class UserModel extends DBModel {
             $result["firstname"] = $entries[0]['firstname'];
             $result["lastname"] = $entries[0]['lastname'];
             $result["Role"] = $entries[0]['Role'];
+            $result["Id"] = $entries[0]['Id'];
         }
         return $result;
     }
@@ -49,5 +50,63 @@ class UserModel extends DBModel {
     // and will be used to display the correct view
     // (e.g., if the user is added, the controller will call the view to display the welcome page)
     // (e.g., if the user is not added, the controller will call the view to display the login form with an error message)
+
+
+    function add_file(string $Titre, string $Type, string $Contenu, string $Date_creation, int $Etat, int $Id_Utilisateur, int $Id_template) {
+        $result = [];
+        if (!$this->connected) {
+        // Something went wrong during the connection to the database.
+        // In this example, we simply do not perform the query...
+        // A real website should display a message for users to understand while they cannot log in
+            return $result;
+        }
+        $request = "INSERT INTO document (Titre, Type, Contenu, Date_creation, Etat, Id_Utilisateur, Id_template) VALUES (:Titre, :Type, :Contenu, :Date_creation, :Etat, :Id_Utilisateur, :Id_template)";
+        $statement = $this->db->prepare($request);
+        $statement->execute([
+            "Titre" => $Titre,
+            "Type" => $Type,
+            "Contenu" => $Contenu,
+            "Date_creation" => $Date_creation,
+            "Etat" => $Etat,
+            "Id_Utilisateur" => $Id_Utilisateur,
+            "Id_template" => $Id_template
+        ]);
+        $entries = $statement->fetchAll();
+        if (count($entries) == 1) {
+            $result["Titre"] = $entries[0]['Titre'];
+            $result["Type"] = $entries[0]['Type'];
+            $result["Contenu"] = $entries[0]['Contenu'];
+            $result["Date_creation"] = $entries[0]['Date_creation'];
+            $result["Etat"] = $entries[0]['Etat'];
+            $result["Id_Utilisateur"] = $entries[0]['Id_Utilisateur'];
+            $result["Id_template"] = $entries[0]['Id_template'];
+        }
+        print $result;
+        return $result;
+    }
+
+    function display_file(){
+        $result = [];
+        if (!$this->connected) {
+            // Something went wrong during the connection to the database.
+            // In this example, we simply do not perform the query...
+            // A real website should display a message for users to understand while they cannot log in
+            return $result;
+        }
+        // The request uses the MD5() functions since password should not be stored
+        // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
+        $request = "SELECT * FROM document";
+        $statement = $this->db->prepare($request);
+//        $statement->execute([
+//            "login" => $login,
+//            "password" => $password
+//        ]);
+        $entries = $statement->fetchAll();
+        $i = 0;
+        if ($i < count($entries)) {
+            $result[$i] = $entries[0][$i];
+        }
+        return $result;
+    }
     
 }

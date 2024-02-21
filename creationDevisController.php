@@ -13,7 +13,6 @@
     // __DIR__ allows you to use relative paths explicitly
     require(__DIR__."/scripts/php/models/UserModel2.php");
 
-
     // Now, let's call the view.
     // If something to say, the view will display it
     // Otherwise, the view will simply display the login form
@@ -25,9 +24,8 @@
     // and then call the correct view
     // the form if not logged in, the welcome page if logged in
     if (session_start()) {
-        require(__DIR__."/scripts/php/views/creation.php");
+        require(__DIR__."/scripts/php/views/creationDevis.php");
     }
     else {
         require(__DIR__."/scripts/php/views/login.php");
     }
-
