@@ -282,14 +282,24 @@ p{
     background: #DDD0C8;
     margin-bottom: 10px;
     text-align: center;
+    width: 60%;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    margin-left: 20%;
 }
 
-.display li{
+.display td{
     margin-left: 10px;
     margin-right: 10px;
-    display :block;
+    width: 20%;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    border: #333 solid thin;
+}
+.display button{
     width: 100%;
-
 }
 
 h2{
@@ -321,3 +331,13 @@ h2{
     height: 75px;
 }
 
+table{
+    width: 100%;
+    align-items: center;
+}
+
+.creation{
+    margin-inline-start: 80%;
+    width: 100px;
+    height: 50px;
+}

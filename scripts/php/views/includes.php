@@ -183,11 +183,7 @@
             echo "<td> <button> Voir le fichier </button> </td>";
             echo("</tr>");
         }
-        
         echo("</table>");
-        if (isset($something_to_say)) {
-            include_error_message($something_to_say);
-        }
     }
 
     function include_recent_files($RECENTFILES){
@@ -220,26 +216,28 @@
                 </div>
             </div>
         </div>
-        <button>Next</button>
+        <button class="creation">Créer</button>
         </form>
         <?php
     }
 
+
     function create_devis() {
         ?>
         <h2>Information sur le devis</h2>
-        <form method="post" action="creationController.php">
+        <form method="post" action="creationDevisController.php">
         <div class="flex-container">
             <div class='box_crea'>
                 <p>Sélectionner une zone à remplir</p>
                 <p>Lorem Ipsum</p>
-                <input type="text" id="ContenuFacture" name="ContenuFacture">
+                <input type="text" id="ContenuDevis" name="ContenuDevis">
             </div>
             <div class='box_crea'>
                 <div class='file_info'>
                     <p>Titre</p>
                     <input type="text" id="TitreDevis" name="TitreDevis">
                     <p>Auteur : <?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname']; ?></p>
+                    <input type="text" id="IdUser" name="IdUser" value=<?php echo $_SESSION['Id']?> hidden>
                     <p>Date : <?php echo date('Y-m-d'); ?></p>
                 </div>
                 <div class='feedback'>
@@ -247,7 +245,7 @@
                 </div>
             </div>
         </div>
-        <button>Next</button>
+        <button class="creation">Créer</button>
         </form>
         <?php
     }
