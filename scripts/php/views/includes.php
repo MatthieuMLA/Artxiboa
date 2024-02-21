@@ -167,13 +167,33 @@
     function include_display_file($RESULT){
         $nb = count($RESULT);
         echo "<p>Found " . $nb . " results.</p>";
-        echo("<ul class='display'>");
+        echo("<table class='display'>");
+        echo("<tr>");
+        echo("<td>Titre</td>");
+        echo("<td>Type de document</td>");
+        echo("<td>Identifiant du modificateur</td>");
+        echo("<td>Date de création</td>");
+        echo("</tr>");
         foreach($RESULT as $res){
-            echo "<li>" . $res["Titre"] . " - " . $res["Type"] . " - " . $res["Id_Utilisateur"] . " - " . $res["Date_creation"] . "</li>";
+            echo("<tr>");
+            echo "<td>" . $res["Titre"] . "</td>";
+            echo "<td>" . $res["Type"] . "</td>";
+            echo "<td>" . $res["Id_Utilisateur"] . "</td>";
+            echo "<td>" . $res["Date_creation"] . "</td>";
+            echo "<td> <button> Voir le fichier </button> </td>";
+            echo("</tr>");
         }
-        echo("</ul>");
+        
+        echo("</table>");
         if (isset($something_to_say)) {
             include_error_message($something_to_say);
+        }
+    }
+
+    function include_recent_files($RECENTFILES){
+        $nb = count($RECENTFILES);
+        foreach($RECENTFILES as $res){
+            echo "<p>" . $res["Type"] . " " . $res["Titre"] ."</p>";
         }
     }
 
@@ -192,7 +212,7 @@
                     <p>Titre</p>
                     <input type="text" id="TitreFacture" name="TitreFacture">
                     <p>Auteur : <?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname']; ?></p>
-                    <input type="text" id="IdUser" name="IdUser" value=<?php echo $_SESSION['Id']?> readonly>
+                    <input type="text" id="IdUser" name="IdUser" value=<?php echo $_SESSION['Id']?> hidden>
                     <p>Date : <?php echo date('Y-m-d'); ?></p>
                 </div>
                 <div class='feedback'>

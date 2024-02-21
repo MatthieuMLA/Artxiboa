@@ -23,6 +23,7 @@
             $currentDate = date('Y-m-d');
             $Titre = $_POST['TitreFacture'];
             $Contenu = $_POST['ContenuFacture'];
+            $Id_user = $_POST['IdUser'];
             $result = $userModel->add_file($Titre, 'facture', $Contenu, $currentDate, 1, $Id_user, 2);
             $result = array();
         }
