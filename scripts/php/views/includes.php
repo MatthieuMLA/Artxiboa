@@ -177,6 +177,7 @@
         echo("<td>Date de création</td>");
         echo("</tr>");
         foreach($RESULT as $res){
+            echo "<form method='post' action='visualisationController.php' class='file-form'>";
             echo("<tr>");
             echo "<td>" . $res["Titre"] . "</td>";
             echo "<td>" . $res["Type"] . "</td>";
@@ -184,6 +185,10 @@
             echo "<td>" . $res["Date_creation"] . "</td>";
             echo "<td> <button> Voir le fichier </button> </td>";
             echo("</tr>");
+            ?>
+            <input type='text' id='IdFile' name='IdFile' value=<?php echo  $res["Id"]?> hidden>
+            <?php
+            echo "</form>";
         }
         echo("</table>");
     }
