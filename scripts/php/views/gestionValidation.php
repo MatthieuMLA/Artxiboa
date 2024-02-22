@@ -13,7 +13,7 @@
         <?php 
         ?>
         <?php include_display_file_validate($FILES_TO_VALIDATE);?>
-
+        
         <?php 
             // if an error happened
             if (isset($something_to_say)) {

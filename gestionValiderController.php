@@ -15,25 +15,25 @@
     $FILES_REFUSED = $userModel->display_file_refused();
     $FILES_ARCHIVED = $userModel->display_file_archived();
     $FILES_TO_VALIDATE = $userModel->display_file_to_validate();
-
-    if (isset($_POST['IdFile']) && isset($_POST['ContenuFile'])) {
+    if (isset($_POST['IdFile'])) {
 
         // check if all fields have an input
-        if (strlen($_POST['IdFile']) > 0 && strlen($_POST['ContenuFile']) > 0) {
+        if (strlen($_POST['IdFile']) > 0) {
             $userModel = new UserModel();
-            $result = $userModel->change_document($_POST['IdFile'], $_POST['ContenuFile']);
-            $result = $userModel->valider_document($_POST['IdFile']);
+            // Call the model to check if the user exists
+            // How is the information stored? In a database? In a file? In a cloud? In a cookie?
+            // The controller does not care about that. It just calls the model.
+            $result = $userModel->getWhatsInFile($_POST['IdFile']);
+            // If the search (in the db here) is successful
+            $_SESSION['File']=$result;
+            $File['file']=$result;
         }
         else {
             // set the error message to be displayed in the view
-            $something_to_say = "Invalid login and/or password.";  
+            $something_to_say = "Could load the file";
         }
-    }
-    else {
-        // set the error message to be displayed in the view
-        $something_to_say = "Missing login and/or password";
-    }
-
+        }
+        
 
     // before calling the view, just include useful view-related functions
     require(__DIR__."/scripts/php/views/includes.php");
@@ -43,7 +43,7 @@
     // the form if not logged in, the welcome page if logged in
 
     if (session_start()) {
-        require(__DIR__."/scripts/php/views/gestionValidation.php");
+        require(__DIR__."/scripts/php/views/gestionValider.php");
     }
     else {
         require(__DIR__."/scripts/php/views/login.php");

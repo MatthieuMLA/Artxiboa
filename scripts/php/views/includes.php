@@ -275,7 +275,7 @@
         echo("<td>Date de création</td>");
         echo("</tr>");
         foreach($RESULT as $res){
-            echo "<form method='post' action='gestionValidationController.php' class='file-form'>";
+            echo "<form method='post' action='gestionValiderController.php' class='file-form'>";
             echo("<tr>");
             echo "<td>" . $res["Titre"] . "</td>";
             echo "<td>" . $res["Type"] . "</td>";
