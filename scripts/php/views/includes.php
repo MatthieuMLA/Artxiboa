@@ -429,7 +429,7 @@
                 <input type="text" id="filename" required/>
             </div>
             <div>
-                <p>Nom du fichier</p>
+                <p>Date du fichier</p>
                 <input type="date" id="filedate" required/>
             </div>
             <div>
