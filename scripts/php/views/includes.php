@@ -248,7 +248,7 @@
         echo("<td>Date de création</td>");
         echo("</tr>");
         foreach($RESULT as $res){
-            echo "<form method='post' action='gestionModificationController.php' class='file-form'>";
+            echo "<form method='post' action='gestionModifierController.php' class='file-form'>";
             echo("<tr>");
             echo "<td>" . $res["Titre"] . "</td>";
             echo "<td>" . $res["Type"] . "</td>";

@@ -44,6 +44,23 @@ class UserModel extends DBModel {
         return $result;
     }
 
+    function change_document(string $IdFile, string $ContenuFile) {
+        $result = [];
+        if (!$this->connected) {
+            // Something went wrong during the connection to the database.
+            // In this example, we simply do not perform the query...
+            // A real website should display a message for users to understand while they cannot log in
+            return $result;
+        }
+        $request = "UPDATE document SET Contenu=:ContenuFile WHERE Id=:IdFile";
+        $statement = $this->db->prepare($request);
+        $statement->execute([
+            "ContenuFile" => $ContenuFile,
+            "IdFile" => $IdFile
+        ]);
+        $entries = $statement->fetchAll();
+    }
+
     // other useful methods to interact with the database
     // could be to add a new user, to delete a user, to update a user, etc.
     // all these methods will be called by the controller

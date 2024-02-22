@@ -436,6 +436,11 @@ h4{
     margin: 10px 0px 10px 0px;
 }
 
+form .enregistrerChangement{
+    width: 100%;
+    margin: 10px 0px;
+}
+
 footer {
     background-color: darkgrey;
     text-align: center;
