@@ -111,7 +111,7 @@ class UserModel extends DBModel {
         }
         // The request uses the MD5() functions since password should not be stored
         // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
-        $request = "SELECT * FROM document WHERE Etat=1";
+        $request = "SELECT * FROM document WHERE Etat=1 OR Etat=2";
         $statement = $this->db->prepare($request);
         $statement->execute();
         $result = $statement->fetchAll();

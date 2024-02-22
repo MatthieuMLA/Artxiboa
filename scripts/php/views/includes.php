@@ -166,7 +166,7 @@
             </div>
             <div>
                 <img src="media/import.png" alt="Importer" height="170"></a>
-                <form method="post" action="gestionController.php">
+                <form method="post" action="importationController.php">
                     <button>Importer un document</button>
                 </form>
                 <p>L'importation de fichiers consiste à transférer des données d'un format à un autre, ou à transférer des données d'un système informatique à un autre.</p>
@@ -186,7 +186,7 @@
                     *
                     </div>
                 </label>
-                <input type="text" placeholder="login" id="login" name="login">
+                <input type="text" placeholder="login" id="login" name="login" required>
                 </div>
                 <div>
                     <div>
@@ -195,7 +195,7 @@
                     *
                     </label>
                     </div>
-                <input type="password" placeholder='password' id='pwd' name="pwd">
+                <input type="password" placeholder='password' id='pwd' name="pwd" required>
                 </div>
                 <div>
                 <label for="button">
@@ -322,20 +322,16 @@
         <form method="post" action="creationFactureController.php">
         <div class="flex-container">
             <div class='box_crea'>
-                <p>Sélectionner une zone à remplir</p>
-                <p>Lorem Ipsum</p>
-                <input type="text" id="ContenuFacture" name="ContenuFacture">
+                <p>Remplir la zone ci-dessous</p>
+                <textarea id="ContenuFacture" name="ContenuFacture" rows="20" cols="50" required></textarea>
             </div>
             <div class='box_crea'>
                 <div class='file_info'>
                     <p>Titre</p>
-                    <input type="text" id="TitreFacture" name="TitreFacture">
+                    <input type="text" id="TitreFacture" name="TitreFacture" required>
                     <p>Auteur : <?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname']; ?></p>
                     <input type="text" id="IdUser" name="IdUser" value=<?php echo $_SESSION['Id']?> hidden>
                     <p>Date : <?php echo date('Y-m-d'); ?></p>
-                </div>
-                <div class='feedback'>
-                    <p>Feedback</p>
                 </div>
             </div>
         </div>
@@ -351,20 +347,16 @@
         <form method="post" action="creationDevisController.php">
         <div class="flex-container">
             <div class='box_crea'>
-                <p>Sélectionner une zone à remplir</p>
-                <p>Lorem Ipsum</p>
-                <input type="text" id="ContenuDevis" name="ContenuDevis">
+                <p>Remplir la zone ci-dessous</p>
+                <textarea id="ContenuDevis" name="ContenuDevis" rows="20" cols="50" required></textarea>
             </div>
             <div class='box_crea'>
                 <div class='file_info'>
                     <p>Titre</p>
-                    <input type="text" id="TitreDevis" name="TitreDevis">
+                    <input type="text" id="TitreDevis" name="TitreDevis" required>
                     <p>Auteur : <?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname']; ?></p>
                     <input type="text" id="IdUser" name="IdUser" value=<?php echo $_SESSION['Id']?> hidden>
                     <p>Date : <?php echo date('Y-m-d'); ?></p>
-                </div>
-                <div class='feedback'>
-                    <p>Feedback</p>
                 </div>
             </div>
         </div>
@@ -414,7 +406,7 @@
 
     function include_recent_files2(){ 
         echo "<div class='docRecent'>";
-        ?><h4>Document récent</h4><?php
+        ?><h4>Mes Documents récents</h4><?php
         $RECENTFILES = $_SESSION['recentfiles'];
         foreach($RECENTFILES as $res){
             echo "<form method='post' action='visualisationController.php' class='file-form'>";
@@ -425,6 +417,33 @@
             echo "</form>";
         }
         echo "</div>";
+    }
+
+    function include_importation(){
+        ?>
+        <h4>Importer un fichier</h4>
+        <form class="import2" action="travauxController.php">
+        <div>
+            <div>
+                <p>Nom du fichier</p>
+                <input type="text" id="filename" required/>
+            </div>
+            <div>
+                <p>Nom du fichier</p>
+                <input type="date" id="filedate" required/>
+            </div>
+        </div>
+        <div>
+            <div>
+                <input type="file" id="file" name="file" required accept=".pdf,.txt">
+                <p>Seuls les fichiers en .pdf ou .txt sont autorisés</p>
+            </div>
+            <div>
+                <button>Ajouter le fichier</button>
+            </div>
+        </div>
+        </form>
+        <?php
     }
 
     function include_footer() {
