@@ -407,15 +407,24 @@
     function include_recent_files2(){ 
         echo "<div class='docRecent'>";
         ?><h4>Mes Documents récents</h4><?php
+        echo "<table>";
+        echo "<tr>";
+        echo "<th>Type de fichier</td>";
+        echo "<th>Nom de fichier</td>";
+        echo "<th>Identifiant du fichier</td>";
+        echo "</tr>";
         $RECENTFILES = $_SESSION['recentfiles'];
         foreach($RECENTFILES as $res){
-            echo "<form method='post' action='visualisationController.php' class='file-form'>";
-            echo "<p>" . $res["Type"] . " " . $res["Titre"] . " " . $res["Id"] . "  " ."<button> Voir le fichier </button></p>";
+            echo "<tr>";
+            echo "<form method='post' action='visualisationController.php' class='fileform'>";
+            echo "<td>" . $res["Type"] . "</td><td>" . $res["Titre"] . "</td><td>" . $res["Id"] . " </td><td>" ."<button> Voir le fichier </button></td>";
             ?>
             <input type='text' id='IdFile' name='IdFile' value=<?php echo  $res["Id"]?> hidden>
             <?php
             echo "</form>";
+            echo "<tr>";
         }
+        echo "</table>";
         echo "</div>";
     }
 
