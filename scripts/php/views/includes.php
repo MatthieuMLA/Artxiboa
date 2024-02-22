@@ -310,13 +310,18 @@
     }
 
     function include_recent_files2(){ 
+        echo "<div class='docRecent'>";
         ?><h4>Document récent</h4><?php
         $RECENTFILES = $_SESSION['recentfiles'];
-        echo "<div class='docRecent'>";
         foreach($RECENTFILES as $res){
-            echo "<p>" . $res["Type"] . " " . $res["Titre"] ."</p>";
+            echo "<form method='post' action='visualisationController.php' class='file-form'>";
+            echo "<p>" . $res["Type"] . " " . $res["Titre"] . " " . $res["Id"] . "  " ."<button> Voir le fichier </button></p>";
+            ?>
+            <input type='text' id='IdFile' name='IdFile' value=<?php echo  $res["Id"]?> hidden>
+            <?php
+            echo "</form>";
         }
-        
+        echo "</div>";
     }
 
     function include_footer() {

@@ -346,3 +346,19 @@ table{
 .travaux img {
     width: 100%;
 }
+
+.docRecent {
+    margin: 10px;
+    display: block;
+}
+.docRecent p{
+    margin: 10px;
+    display: block;
+    &:hover{ 
+        color: #54504d;
+    }
+}
+
+p {
+    margin: 5px;
+}

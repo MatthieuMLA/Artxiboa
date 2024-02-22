@@ -120,4 +120,22 @@ class UserModel extends DBModel {
         return $result;
     }
     
+    function getWhatsInFile($Id){
+        $result = [];
+        if (!$this->connected) {
+            // Something went wrong during the connection to the database.
+            // In this example, we simply do not perform the query...
+            // A real website should display a message for users to understand while they cannot log in
+            return $result;
+        }
+        // The request uses the MD5() functions since password should not be stored
+        // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
+        $request = "SELECT * FROM document WHERE Id=:Id";
+        $statement = $this->db->prepare($request);
+        $statement->execute([
+            "Id" => $Id,
+        ]);
+        $result = $statement->fetchAll();
+        return $result;
+    }
 }
