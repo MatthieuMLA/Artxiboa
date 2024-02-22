@@ -111,7 +111,7 @@ class UserModel extends DBModel {
         }
         // The request uses the MD5() functions since password should not be stored
         // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
-        $request = "SELECT * FROM document WHERE Id_Utilisateur=:Id_Utilisateur";
+        $request = "SELECT * FROM document WHERE Id_Utilisateur=:Id_Utilisateur ORDER BY Date_creation DESC;";
         $statement = $this->db->prepare($request);
         $statement->execute([
             "Id_Utilisateur" => $Id_Utilisateur,
