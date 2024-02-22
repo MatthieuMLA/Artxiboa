@@ -22,15 +22,16 @@
         if (strlen($_POST['IdFile']) > 0 && strlen($_POST['ContenuFile']) > 0) {
             $userModel = new UserModel();
             $result = $userModel->change_document($_POST['IdFile'], $_POST['ContenuFile']);
+            $result = $userModel->envoyer_document($_POST['IdFile']);
         }
         else {
             // set the error message to be displayed in the view
-            $something_to_say = "Invalid login and/or password.";  
+            $something_to_say = "";  
         }
     }
     else {
         // set the error message to be displayed in the view
-        $something_to_say = "Missing login and/or password";
+        $something_to_say = "";
     }
 
 

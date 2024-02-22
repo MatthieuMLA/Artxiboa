@@ -42,7 +42,7 @@
                 <td><?php print_r($newFile['Date_creation']); ?></td>
             </tr>
         </table>
-        <button class='enregistrerChangement'>Enregistrer les changements</button>
+        <button class='enregistrerChangement'>Enregistrer les changements et envoyer à valider</button>
         </form>
         <?php include_footer(); ?>
 

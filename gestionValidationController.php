@@ -26,12 +26,12 @@
         }
         else {
             // set the error message to be displayed in the view
-            $something_to_say = "Invalid login and/or password.";  
+            $something_to_say = "";  
         }
     }
     else {
         // set the error message to be displayed in the view
-        $something_to_say = "Missing login and/or password";
+        $something_to_say = "";
     }
 
 
