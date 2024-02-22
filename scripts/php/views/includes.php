@@ -432,6 +432,9 @@
                 <p>Nom du fichier</p>
                 <input type="date" id="filedate" required/>
             </div>
+            <div>
+                <p class="descripImport">L'importation de fichiers consiste à transférer des données d'un format à un autre, ou à transférer des données d'un système informatique à un autre.</p>
+            </div>
         </div>
         <div>
             <div>
