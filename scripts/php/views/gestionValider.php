@@ -42,7 +42,8 @@
                 <td><?php print_r($newFile['Date_creation']); ?></td>
             </tr>
         </table>
-        <button class='enregistrerChangement'>Valider et archiver le fichier</button>
+        <button class='enregistrerChangement' id="Valider" name="Valider" value='true'>Valider et archiver le fichier</button>
+        <button class='enregistrerChangement' id="Valider" name="Valider" value='false'>Refuser le fichier</button>
         </form>
         <?php include_footer(); ?>
 

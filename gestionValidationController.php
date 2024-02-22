@@ -16,13 +16,19 @@
     $FILES_ARCHIVED = $userModel->display_file_archived();
     $FILES_TO_VALIDATE = $userModel->display_file_to_validate();
 
-    if (isset($_POST['IdFile']) && isset($_POST['ContenuFile'])) {
-
+    if (isset($_POST['IdFile']) && isset($_POST['ContenuFile']) && isset($_POST['Valider'])) {
         // check if all fields have an input
         if (strlen($_POST['IdFile']) > 0 && strlen($_POST['ContenuFile']) > 0) {
-            $userModel = new UserModel();
-            $result = $userModel->change_document($_POST['IdFile'], $_POST['ContenuFile']);
-            $result = $userModel->valider_document($_POST['IdFile']);
+            if ($_POST['Valider'] == true){
+                $userModel = new UserModel();
+                $result = $userModel->change_document($_POST['IdFile'], $_POST['ContenuFile']);
+                $result = $userModel->valider_document($_POST['IdFile']);
+            }
+            else {
+                $userModel = new UserModel();
+                $result = $userModel->change_document($_POST['IdFile'], $_POST['ContenuFile']);
+                $result = $userModel->refuser_document($_POST['IdFile']);
+            }
         }
         else {
             // set the error message to be displayed in the view

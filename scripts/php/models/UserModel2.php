@@ -77,6 +77,22 @@ class UserModel extends DBModel {
         $entries = $statement->fetchAll();
     }
 
+    function refuser_document(string $IdFile) {
+        $result = [];
+        if (!$this->connected) {
+            // Something went wrong during the connection to the database.
+            // In this example, we simply do not perform the query...
+            // A real website should display a message for users to understand while they cannot log in
+            return $result;
+        }
+        $request = "UPDATE document SET Etat=2 WHERE Id=:IdFile";
+        $statement = $this->db->prepare($request);
+        $statement->execute([
+            "IdFile" => $IdFile
+        ]);
+        $entries = $statement->fetchAll();
+    }
+
     function envoyer_document(string $IdFile) {
         $result = [];
         if (!$this->connected) {
