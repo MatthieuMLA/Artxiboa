@@ -19,7 +19,7 @@
     if (isset($_POST['IdFile']) && isset($_POST['ContenuFile']) && isset($_POST['Valider'])) {
         // check if all fields have an input
         if (strlen($_POST['IdFile']) > 0 && strlen($_POST['ContenuFile']) > 0) {
-            if ($_POST['Valider'] == true){
+            if ($_POST['Valider'] == 'true'){
                 $userModel = new UserModel();
                 $result = $userModel->change_document($_POST['IdFile'], $_POST['ContenuFile']);
                 $result = $userModel->valider_document($_POST['IdFile']);
