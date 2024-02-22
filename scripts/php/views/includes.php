@@ -6,7 +6,7 @@
  * @author: w.delamare
  * @date: Dec. 2023
  */
-
+    //require(__DIR__."/../models/UserModel2.php");
     function include_header() {
     ?>
     <header>
@@ -111,19 +111,21 @@
                 <form method="post" action="creationDevisController.php">
                     <button>Créer un devis</button>
                 </form>
-                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                <p>Un devis est un document détaillant les coûts et les conditions d'une transaction commerciale proposée. Il est généralement envoyé avant la conclusion du contrat pour informer le client des coûts et conditions.</p>
             </div>
             <div>
                 <img src="media/facture.png" alt="Facture" height="170"></a>
                 <form method="post" action="creationFactureController.php">
                     <button>Créer une facture</button>
                 </form>
-                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                <p>Une facture est un document qui détaille les biens ou services fournis à un client, avec leurs prix et les conditions de paiement. Elle est émise après la livraison des biens ou services et constitue une demande de paiement.</p>
             </div>
             <div>
                 <img src="media/import.png" alt="Importer" height="170"></a>
-                <button>Importer un document</button>
-                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                <form method="post" action="gestionController.php">
+                    <button>Importer un document</button>
+                </form>
+                <p>L'importation de fichiers consiste à transférer des données d'un format à un autre, ou à transférer des données d'un système informatique à un autre.</p>
             </div>
     </div>
         <?php
@@ -186,12 +188,30 @@
         echo("</table>");
     }
 
-    function include_recent_files($RECENTFILES){
-        $nb = count($RECENTFILES);
-        foreach($RECENTFILES as $res){
-            echo "<p>" . $res["Type"] . " " . $res["Titre"] ."</p>";
-        }
+    function include_en_travaux(){
+        ?>
+        <main>
+            <div class="travaux">
+                <img src="media/enTravaux.png" alt="Construction"></a>
+                <h1>Notre site web est actuellement en construction !</h1>
+                <p>Nous vous remercions de votre patience et nous serons de retour bientôt avec une toute nouvelle apparence et des fonctionnalités améliorées.</p>
+            </div>
+    </main>
+        <?php
     }
+
+    function include_accueil(){
+        ?>
+        <main>
+            <h1>Bienvenue sur notre système d'archivage électronique</h1>
+            <h2>Améliorez l'accès à l'information et réduisez les coûts d'exploitation</h2>
+            <p>
+                Notre système d'archivage électronique vise à améliorer l'accès à l'information au sein de votre entreprise, réduire les coûts d'exploitation et diminuer les risques de litiges.
+            </p>
+        </main>
+        <?php
+    }
+
 
     function create_facture() {
         ?>
@@ -248,6 +268,55 @@
         <button class="creation">Créer</button>
         </form>
         <?php
+    }
+
+    function include_recent_files() {
+        ?>
+        <main>
+            
+            <div class="flex-container">
+
+                <div class="box">Mes Document Récents
+                    <div class="div2">
+                        <div class="h1">
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <table id="customers">
+                        <tr>
+                            <th>Dernier Document Visualiser</th>
+                            <th>Noms</th>
+                            <th>Version</th>
+                        </tr>
+                        <tr>
+                            <td>Facture </td>
+                            <td>Safran</td>
+                            <td>V1</td>
+                        </tr>
+                        <tr>
+                            <td>Devis</td>
+                            <td>Adour BTP</td>
+                            <td>V3</td>
+                        </tr>
+                    </table>
+                </div>
+
+
+        </main>
+        <?php        
+    }
+
+    function include_recent_files2(){ 
+        ?><h4>Document récent</h4><?php
+        $RECENTFILES = $_SESSION['recentfiles'];
+        echo "<div class='docRecent'>";
+        foreach($RECENTFILES as $res){
+            echo "<p>" . $res["Type"] . " " . $res["Titre"] ."</p>";
+        }
+        
     }
 
     function include_footer() {

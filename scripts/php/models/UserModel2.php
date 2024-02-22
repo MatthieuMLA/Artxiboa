@@ -13,8 +13,7 @@
 require("DBModel.php");
 
 class UserModel extends DBModel {
-
-
+    var $ID_Utilisateur;
     /**
      * @return an associative array of all employees with first_name, last_name, id, creation_date (not formatted)
      */
@@ -39,7 +38,8 @@ class UserModel extends DBModel {
             $result["firstname"] = $entries[0]['firstname'];
             $result["lastname"] = $entries[0]['lastname'];
             $result["Role"] = $entries[0]['Role'];
-            $result["Id"] = $entries[0]['Id'];
+            $result["Id"] = $entries[0]['Id']; 
+            $Id_Utilisateur = $result["Id"];
         }
         return $result;
     }
@@ -97,6 +97,25 @@ class UserModel extends DBModel {
         $request = "SELECT * FROM document";
         $statement = $this->db->prepare($request);
         $statement->execute();
+        $result = $statement->fetchAll();
+        return $result;
+    }
+
+    function getRecentFiles($Id_Utilisateur){
+        $result = [];
+        if (!$this->connected) {
+            // Something went wrong during the connection to the database.
+            // In this example, we simply do not perform the query...
+            // A real website should display a message for users to understand while they cannot log in
+            return $result;
+        }
+        // The request uses the MD5() functions since password should not be stored
+        // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
+        $request = "SELECT * FROM document WHERE Id_Utilisateur=:Id_Utilisateur";
+        $statement = $this->db->prepare($request);
+        $statement->execute([
+            "Id_Utilisateur" => $Id_Utilisateur,
+        ]);
         $result = $statement->fetchAll();
         return $result;
     }

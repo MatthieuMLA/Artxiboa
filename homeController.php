@@ -7,11 +7,14 @@
      * @author: w.delamare
      * @date: Dec. 2023
      */
+    
 
-    $Id_user = "";
     // do all necessary includes first
     // __DIR__ allows you to use relative paths explicitly
     require(__DIR__."/scripts/php/models/UserModel2.php");
+    
+
+    $RECENTFILES=array();
 
     // Check if the user comes from the form...
     if (isset($_POST['login']) && isset($_POST['pwd'])) {
@@ -33,6 +36,9 @@
                 $_SESSION['Role'] = $result['Role'];
                 $_SESSION['Id'] = $result['Id'];
                 $Id_user = $result['Id'];
+                $RECENTFILES=$userModel->getRecentFiles($Id_user);
+                //print_r($RECENTFILES);
+                $_SESSION['recentfiles']=$userModel->getRecentFiles($Id_user);
             }
             else {
                 // set the error message to be displayed in the view
@@ -44,7 +50,9 @@
             $something_to_say = "Missing login and/or password";
         }
     }
-
+    //print_r($RECENTFILES);
+    //$RECENTFILES = $userModel->getRecentFiles($_SESSION['Id']);
+    
     // If the user wants to logout, simply destroy the session
     // (and hence redirect to the login form)
     /*

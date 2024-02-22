@@ -25,7 +25,7 @@
     // the form if not logged in, the welcome page if logged in
 
     if (session_start()) {
-        require(__DIR__."/scripts/php/views/gestion.php");
+        require(__DIR__."/scripts/php/views/enTravaux.php");
     }
     else {
         require(__DIR__."/scripts/php/views/login.php");
