@@ -14,7 +14,7 @@
     require(__DIR__."/scripts/php/models/UserModel2.php");
 
     $userModel = new UserModel();
-    $RESULT = $userModel->display_file();
+    $RESULT = $userModel->display_file_archived();;
 
     // Now, let's call the view.
     // If something to say, the view will display it

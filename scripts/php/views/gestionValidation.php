@@ -1,11 +1,3 @@
-<?php
-    // do all necessary includes first
-    // __DIR__ allows you to use relative paths explicitly
-    // here, the file is in the same folder as the includes.php file (view/)
-    
-?>
-
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -19,14 +11,9 @@
         <?php include_header_home(); ?>
         <?php include_menubar(); ?>
         <?php 
-        echo"Modification";
-        print_r($FILES_MODIFICATION);
-        echo"Refused";
-        print_r($FILES_REFUSED);
-        echo"Archive";
-        print_r($FILES_ARCHIVED);
         ?>
-        
+        <?php include_display_file_validate($FILES_TO_VALIDATE);?>
+
         <?php 
             // if an error happened
             if (isset($something_to_say)) {

@@ -79,13 +79,57 @@
         <?php
     }
 
+    function include_gestion_button() {
+        if ($_SESSION['Role'] == '1'){
+            include_gestion_button_sup();
+        } 
+        else{
+            include_gestion_button_normal();
+        }
+    }
+
+    function include_gestion_button_sup(){
+        ?>
+            <div>
+                <form method="post" action="">
+                    <button>Refuser</button>
+                    <input type='text' id='RefusFile' name='RefusFile' value=true hidden>
+                </form>
+            </div>
+            <div>
+                <form method="post" action="">
+                    <button>Valider</button>
+                    <input type='text' id='RefusFile' name='RefusFile' value=false hidden>
+                </form>
+            </div>  
+        <?php
+    }
+
+    function include_gestion_button_normal(){
+        ?>
+            <div>
+                <form method="post" action="">
+                    <button>Modifier</button>
+                    <input type='text' id='ToValidateFile' name='ToValidateFile' value=false hidden>
+                </form>
+            </div>
+            <div>
+                <form method="post" action="">
+                    <button>Envoyer pour validation</button>
+
+                    <input type='text' id='ToValidateFile' name='ToValidateFile' value=true hidden>                
+                </form>
+            </div>  
+        <?php
+    }
+
     function dropdown_sup(){
         ?>
         <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn">Gestion</a>
                     <div class="dropdown-content">
-                        <a href="gestionController.php">Modifier des documents</a>
-                        <a href="gestionController.php">Valider des documents</a>
+                        <a href="gestionModificationController.php">Modifier des documents</a>
+                        <a href="gestionValidationController.php">Valider des documents</a>
                     </div>
         </li>
     <?php
@@ -96,8 +140,8 @@
         <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn">Gestion</a>
                     <div class="dropdown-content">
-                        <a href="gestionController.php">Modifier des documents</a>
-                        <a href="gestionController.php">Envoyer pour validation</a>
+                        <a href="gestionModificationController.php">Modifier des documents</a>
+                        <a href="gestionRefusController.php">Voir les refus</a>
                     </div>
         </li>
         <?php
@@ -168,7 +212,7 @@
 
     function include_display_file($RESULT){
         $nb = count($RESULT);
-        echo "<p>Found " . $nb . " results.</p>";
+        echo "<p>" . $nb . " fichiers ont été trouvés.</p>";
         echo("<table class='display'>");
         echo("<tr>");
         echo("<td>Titre</td>");
@@ -178,6 +222,60 @@
         echo("</tr>");
         foreach($RESULT as $res){
             echo "<form method='post' action='visualisationController.php' class='file-form'>";
+            echo("<tr>");
+            echo "<td>" . $res["Titre"] . "</td>";
+            echo "<td>" . $res["Type"] . "</td>";
+            echo "<td>" . $res["Id_Utilisateur"] . "</td>";
+            echo "<td>" . $res["Date_creation"] . "</td>";
+            echo "<td> <button> Voir le fichier </button> </td>";
+            echo("</tr>");
+            ?>
+            <input type='text' id='IdFile' name='IdFile' value=<?php echo  $res["Id"]?> hidden>
+            <?php
+            echo "</form>";
+        }
+        echo("</table>");
+    }
+
+    function include_display_file_modify($RESULT){
+        $nb = count($RESULT);
+        echo "<p>" . $nb . " fichiers ont été trouvés.</p>";
+        echo("<table class='display'>");
+        echo("<tr>");
+        echo("<td>Titre</td>");
+        echo("<td>Type de document</td>");
+        echo("<td>Identifiant du modificateur</td>");
+        echo("<td>Date de création</td>");
+        echo("</tr>");
+        foreach($RESULT as $res){
+            echo "<form method='post' action='gestionModificationController.php' class='file-form'>";
+            echo("<tr>");
+            echo "<td>" . $res["Titre"] . "</td>";
+            echo "<td>" . $res["Type"] . "</td>";
+            echo "<td>" . $res["Id_Utilisateur"] . "</td>";
+            echo "<td>" . $res["Date_creation"] . "</td>";
+            echo "<td> <button> Modifier le fichier </button> </td>";
+            echo("</tr>");
+            ?>
+            <input type='text' id='IdFile' name='IdFile' value=<?php echo  $res["Id"]?> hidden>
+            <?php
+            echo "</form>";
+        }
+        echo("</table>");
+    }
+
+    function include_display_file_validate($RESULT){
+        $nb = count($RESULT);
+        echo "<p>" . $nb . " fichiers ont été trouvés.</p>";
+        echo("<table class='display'>");
+        echo("<tr>");
+        echo("<td>Titre</td>");
+        echo("<td>Type de document</td>");
+        echo("<td>Identifiant du modificateur</td>");
+        echo("<td>Date de création</td>");
+        echo("</tr>");
+        foreach($RESULT as $res){
+            echo "<form method='post' action='gestionValidationController.php' class='file-form'>";
             echo("<tr>");
             echo "<td>" . $res["Titre"] . "</td>";
             echo "<td>" . $res["Type"] . "</td>";

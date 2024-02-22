@@ -25,7 +25,7 @@
             $Titre = $_POST['TitreDevis'];
             $Contenu = $_POST['ContenuDevis'];
             $Id_user = $_POST['IdUser'];
-            $result = $userModel->add_file($Titre, 'Devis', $Contenu, $currentDate, 1, $Id_user, 2);
+            $result = $userModel->add_file($Titre, 'Devis', $Contenu, $currentDate, 1, $Id_user, 1);
             $result = array();
         }
         else {

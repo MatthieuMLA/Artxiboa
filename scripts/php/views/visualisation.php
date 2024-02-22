@@ -39,7 +39,6 @@
                 <td><?php print_r($newFile['Date_creation']); ?></td>
             </tr>
         </table>
-
         <?php include_footer(); ?>
 
     </body>

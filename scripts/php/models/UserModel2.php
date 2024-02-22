@@ -101,6 +101,74 @@ class UserModel extends DBModel {
         return $result;
     }
 
+    function display_file_modified(){
+        $result = [];
+        if (!$this->connected) {
+            // Something went wrong during the connection to the database.
+            // In this example, we simply do not perform the query...
+            // A real website should display a message for users to understand while they cannot log in
+            return $result;
+        }
+        // The request uses the MD5() functions since password should not be stored
+        // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
+        $request = "SELECT * FROM document WHERE Etat=1";
+        $statement = $this->db->prepare($request);
+        $statement->execute();
+        $result = $statement->fetchAll();
+        return $result;
+    }
+
+    function display_file_refused(){
+        $result = [];
+        if (!$this->connected) {
+            // Something went wrong during the connection to the database.
+            // In this example, we simply do not perform the query...
+            // A real website should display a message for users to understand while they cannot log in
+            return $result;
+        }
+        // The request uses the MD5() functions since password should not be stored
+        // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
+        $request = "SELECT * FROM document WHERE Etat=2";
+        $statement = $this->db->prepare($request);
+        $statement->execute();
+        $result = $statement->fetchAll();
+        return $result;
+    }
+
+    function display_file_to_validate(){
+        $result = [];
+        if (!$this->connected) {
+            // Something went wrong during the connection to the database.
+            // In this example, we simply do not perform the query...
+            // A real website should display a message for users to understand while they cannot log in
+            return $result;
+        }
+        // The request uses the MD5() functions since password should not be stored
+        // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
+        $request = "SELECT * FROM document WHERE Etat=4";
+        $statement = $this->db->prepare($request);
+        $statement->execute();
+        $result = $statement->fetchAll();
+        return $result;
+    }
+
+    function display_file_archived(){
+        $result = [];
+        if (!$this->connected) {
+            // Something went wrong during the connection to the database.
+            // In this example, we simply do not perform the query...
+            // A real website should display a message for users to understand while they cannot log in
+            return $result;
+        }
+        // The request uses the MD5() functions since password should not be stored
+        // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
+        $request = "SELECT * FROM document WHERE Etat=3";
+        $statement = $this->db->prepare($request);
+        $statement->execute();
+        $result = $statement->fetchAll();
+        return $result;
+    }
+
     function getRecentFiles($Id_Utilisateur){
         $result = [];
         if (!$this->connected) {
