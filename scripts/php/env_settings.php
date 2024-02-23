@@ -8,7 +8,7 @@ $user = "root";
 $pwd = "";*/
 
 $host = "localhost";
-$dbname = "artxiboa";
+$dbname = "tai_bear";
 $user = "root";
 $pwd = "";
 
