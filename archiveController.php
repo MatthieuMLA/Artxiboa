@@ -12,9 +12,7 @@
     require(__DIR__."/scripts/php/views/includes.php");
 
 
-    // and then call the correct view
-    // the form if not logged in, the welcome page if logged in
-
+    // si on est toujours en session on peut continuer
     if (session_start()) {
         require(__DIR__."/scripts/php/views/archive.php");
     }

@@ -1,13 +1,6 @@
 <?php
     
-    // do all necessary includes first
-    // __DIR__ allows you to use relative paths explicitly
-    
-
-    // Now, let's call the view.
-    // If something to say, the view will display it
-    // Otherwise, the view will simply display the login form
-
+    // Inclure le modèle
     require(__DIR__."/scripts/php/models/UserModel2.php");
 
     $userModel = new UserModel();
@@ -16,32 +9,30 @@
     $FILES_ARCHIVED = $userModel->display_file_archived();
     $FILES_TO_VALIDATE = $userModel->display_file_to_validate();
 
+    // Check si provient d'un formulaire
     if (isset($_POST['IdFile']) && isset($_POST['ContenuFile'])) {
 
-        // check if all fields have an input
+        // check si les champs sont vides
         if (strlen($_POST['IdFile']) > 0 && strlen($_POST['ContenuFile']) > 0) {
             $userModel = new UserModel();
             $result = $userModel->change_document($_POST['IdFile'], $_POST['ContenuFile']);
             $result = $userModel->envoyer_document($_POST['IdFile']);
         }
         else {
-            // set the error message to be displayed in the view
+            // si vide
             $something_to_say = "";  
         }
     }
     else {
-        // set the error message to be displayed in the view
+        // si pas de formulaire
         $something_to_say = "";
     }
 
 
-    // before calling the view, just include useful view-related functions
+    // Inclure les includes nécessaires à la vue
     require(__DIR__."/scripts/php/views/includes.php");
 
-    
-    // and then call the correct view
-    // the form if not logged in, the welcome page if logged in
-
+    // si on est toujours en session on peut continuer
     if (session_start()) {
         require(__DIR__."/scripts/php/views/gestionModification.php");
     }

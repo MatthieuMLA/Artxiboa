@@ -1,26 +1,15 @@
 <?php
-    /**
-     * Example of a simple controller
-     * It will call the model to get the data
-     * and then decide which view to display (login form or welcome page)
-     * 
-     * @author: w.delamare
-     * @date: Dec. 2023
-     */
 
     
-    // do all necessary includes first
-    // __DIR__ allows you to use relative paths explicitly
+    // Inclure le model
     require(__DIR__."/scripts/php/models/UserModel2.php");
 
     if (isset($_POST['TitreDevis']) && isset($_POST['ContenuDevis'])) {
 
-        // check if all fields have an input
+        // check si le titre et contenu est défini
         if (strlen($_POST['TitreDevis']) > 0 && strlen($_POST['ContenuDevis']) > 0) {
             $userModel = new UserModel();
-            // Call the model to check if the user exists
-            // How is the information stored? In a database? In a file? In a cloud? In a cookie?
-            // The controller does not care about that. It just calls the model.
+            // appeler le modele
             $currentDate = date('Y-m-d');
             $Titre = $_POST['TitreDevis'];
             $Contenu = $_POST['ContenuDevis'];
@@ -29,24 +18,20 @@
             $result = array();
         }
         else {
-            // set the error message to be displayed in the view
+            // si il y a un probleme
             $something_to_say = "Missing fields";  
         }
     }
     else {
-        // set the error message to be displayed in the view
+        // si il y a un probleme
         $something_to_say = "Missing fields";  
-    }    
-    // Now, let's call the view.
-    // If something to say, the view will display it
-    // Otherwise, the view will simply display the login form
-
-    // before calling the view, just include useful view-related functions
+    }  
+    
+    // Inclure les includes necessaires à la vue
     require(__DIR__."/scripts/php/views/includes.php");
 
 
-    // and then call the correct view
-    // the form if not logged in, the welcome page if logged in
+    // si on est toujours en session on peut continuer
     if (session_start()) {
         require(__DIR__."/scripts/php/views/creationDevis.php");
     }

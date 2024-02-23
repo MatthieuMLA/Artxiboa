@@ -1,28 +1,20 @@
 <?php
     
-    // do all necessary includes first
-    // __DIR__ allows you to use relative paths explicitly
-    
-
-    // Now, let's call the view.
-    // If something to say, the view will display it
-    // Otherwise, the view will simply display the login form
-
+    // Inclure le modele
     require(__DIR__."/scripts/php/models/UserModel2.php");
 
+    // recupération de fichiers pertinents
     $userModel = new UserModel();
     $FILES_MODIFICATION = $userModel->display_file_modified();
     $FILES_REFUSED = $userModel->display_file_refused();
     $FILES_ARCHIVED = $userModel->display_file_archived();
 
 
-    // before calling the view, just include useful view-related functions
+    // Inclure les includes nécéssaires à la vue
     require(__DIR__."/scripts/php/views/includes.php");
 
     
-    // and then call the correct view
-    // the form if not logged in, the welcome page if logged in
-
+    // si on est toujours en session on peut continuer
     if (session_start()) {
         require(__DIR__."/scripts/php/views/gestion.php");
     }

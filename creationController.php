@@ -9,20 +9,14 @@
      */
 
     
-    // do all necessary includes first
-    // __DIR__ allows you to use relative paths explicitly
+    // Inclure le model
     require(__DIR__."/scripts/php/models/UserModel2.php");
 
-    // Now, let's call the view.
-    // If something to say, the view will display it
-    // Otherwise, the view will simply display the login form
-
-    // before calling the view, just include useful view-related functions
+    // Inclure les includes necessaires à la vue
     require(__DIR__."/scripts/php/views/includes.php");
 
 
-    // and then call the correct view
-    // the form if not logged in, the welcome page if logged in
+    // si on est toujours en session on peut continuer
     if (session_start()) {
         require(__DIR__."/scripts/php/views/creation.php");
     }
