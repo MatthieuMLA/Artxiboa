@@ -8,7 +8,6 @@
     </head>
     <body>
         
-        <!-- PHP only used to display stuff -->
         <?php include_header_home(); ?>
         
         <?php include_menubar(); ?>
@@ -17,6 +16,7 @@
 
         <?php $newFile=$newFile[0]; ?>
 
+        <!-- Homogénéiser l'affichage des fichiers ici utilisé pour les fichiers de l'accueil et l'archivage -->
         <table>
             <tr>
                 <td>Identifiant du fichier</td>

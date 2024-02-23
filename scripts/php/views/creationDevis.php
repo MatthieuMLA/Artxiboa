@@ -6,15 +6,13 @@
         <title>Artxiboa - Creation de facture</title>
     </head>
     <body>
-        
-        <!-- PHP only used to display stuff -->
         <?php include_header_home(); ?>
         <?php include_menubar(); ?>
         <?php create_devis()?>
         <?php include_footer(); ?>
 
         <?php 
-            // if an error happened
+            // Si il y a une erreur
             if (isset($something_to_say)) {
                 include_error_message($something_to_say);
             }

@@ -15,7 +15,7 @@
     </head>
     <body>
         
-        <!-- PHP only used to display stuff -->
+        <!-- Vue annexe utiliser pour construire d'autres vues - pas utilisé actuellement -->
         <?php include_header_home(); ?>
         <?php include_menubar(); ?>
         <?php 
@@ -28,7 +28,7 @@
         ?>
         
         <?php 
-            // if an error happened
+            // Si il y a une erreur
             if (isset($something_to_say)) {
                 include_error_message($something_to_say);
             }

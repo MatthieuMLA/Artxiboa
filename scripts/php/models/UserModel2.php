@@ -1,32 +1,24 @@
 <?php
 
-/**
- * Our model classes (UserModel in this example) extends the base class DBModel
- * so that we can factorize every common methods into the super class
- * 
- * Every other model classes (to deal with other data and tables) will follow the same principle
- * 
- * @author: w.delamare
- * @date: Dec. 2023
- */
-
 require("DBModel.php");
 
 class UserModel extends DBModel {
+    /**
+     * But est de pouvoir appeler cette variable dans le futur
+     */
     var $ID_Utilisateur;
     /**
-     * @return an associative array of all employees with first_name, last_name, id, creation_date (not formatted)
+     * @return un array avec firstname, lastname, role et identifiant
      */
     function check_login(string $login, string $password) {
         $result = [];
         if (!$this->connected) {
-            // Something went wrong during the connection to the database.
-            // In this example, we simply do not perform the query...
-            // A real website should display a message for users to understand while they cannot log in
+            // Si il y a un probleme avec la connexion à la db
+            // Ici on n'affiche rien
             return $result;
         }
-        // The request uses the MD5() functions since password should not be stored
-        // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
+        // La requete utilise la fonction MD5() car le mot de passe ne devrait pas être enregistré
+        // test que l'utilisateur avec le mdp existe
         $request = "SELECT * FROM user WHERE login=:login AND password=MD5(:password)";
         $statement = $this->db->prepare($request);
         $statement->execute([
@@ -34,6 +26,7 @@ class UserModel extends DBModel {
             "password" => $password
         ]);
         $entries = $statement->fetchAll();
+        // si c'est vide c'est qu'il n'y a pas d'utilisateur avec ce mdp
         if (count($entries) == 1) {
             $result["firstname"] = $entries[0]['firstname'];
             $result["lastname"] = $entries[0]['lastname'];
@@ -44,12 +37,16 @@ class UserModel extends DBModel {
         return $result;
     }
 
+    /*
+    * Affecte le contenu du document
+    * Target le document à partir de son ID et change son contenu 
+    * Ne retrourne rien
+    */
     function change_document(string $IdFile, string $ContenuFile) {
         $result = [];
         if (!$this->connected) {
-            // Something went wrong during the connection to the database.
-            // In this example, we simply do not perform the query...
-            // A real website should display a message for users to understand while they cannot log in
+            // Si il y a un probleme avec la connexion à la db
+            // Ici on n'affiche rien
             return $result;
         }
         $request = "UPDATE document SET Contenu=:ContenuFile WHERE Id=:IdFile";
@@ -61,12 +58,16 @@ class UserModel extends DBModel {
         $entries = $statement->fetchAll();
     }
 
+    /*
+    * Affecte l'état du document
+    * Target le document à partir de son ID et change son état ici pour valider donc etat=3
+    * Ne retrourne rien
+    */
     function valider_document(string $IdFile) {
         $result = [];
         if (!$this->connected) {
-            // Something went wrong during the connection to the database.
-            // In this example, we simply do not perform the query...
-            // A real website should display a message for users to understand while they cannot log in
+            // Si il y a un probleme avec la connexion à la db
+            // Ici on n'affiche rien
             return $result;
         }
         $request = "UPDATE document SET Etat=3 WHERE Id=:IdFile";
@@ -77,12 +78,16 @@ class UserModel extends DBModel {
         $entries = $statement->fetchAll();
     }
 
+    /*
+    * Affecte l'état du document
+    * Target le document à partir de son ID et change son état ici pour refuser donc etat=2
+    * Ne retrourne rien
+    */
     function refuser_document(string $IdFile) {
         $result = [];
         if (!$this->connected) {
-            // Something went wrong during the connection to the database.
-            // In this example, we simply do not perform the query...
-            // A real website should display a message for users to understand while they cannot log in
+            // Si il y a un probleme avec la connexion à la db
+            // Ici on n'affiche rien
             return $result;
         }
         $request = "UPDATE document SET Etat=2 WHERE Id=:IdFile";
@@ -93,12 +98,16 @@ class UserModel extends DBModel {
         $entries = $statement->fetchAll();
     }
 
+    /*
+    * Affecte l'état du document
+    * Target le document à partir de son ID et change son état ici pour envoyer vers validation donc etat=4
+    * Ne retrourne rien
+    */
     function envoyer_document(string $IdFile) {
         $result = [];
         if (!$this->connected) {
-            // Something went wrong during the connection to the database.
-            // In this example, we simply do not perform the query...
-            // A real website should display a message for users to understand while they cannot log in
+            // Si il y a un probleme avec la connexion à la db
+            // Ici on n'affiche rien
             return $result;
         }
         $request = "UPDATE document SET Etat=4 WHERE Id=:IdFile";
@@ -109,20 +118,17 @@ class UserModel extends DBModel {
         $entries = $statement->fetchAll();
     }
 
-    // other useful methods to interact with the database
-    // could be to add a new user, to delete a user, to update a user, etc.
-    // all these methods will be called by the controller
-    // and will be used to display the correct view
-    // (e.g., if the user is added, the controller will call the view to display the welcome page)
-    // (e.g., if the user is not added, the controller will call the view to display the login form with an error message)
-
-
+    /*
+    * Affecte la db pour y ajouter un document
+    * Toutes les infos du document sont donnés en entrée
+    * Se connecte à la db et ajoute un nouveau document 
+    * Retourne les infrmations du document
+    */
     function add_file(string $Titre, string $Type, string $Contenu, string $Date_creation, int $Etat, int $Id_Utilisateur, int $Id_template) {
         $result = [];
         if (!$this->connected) {
-        // Something went wrong during the connection to the database.
-        // In this example, we simply do not perform the query...
-        // A real website should display a message for users to understand while they cannot log in
+        // Si il y a un probleme avec la connexion à la db
+        // Ici on n'affiche rien
             return $result;
         }
         $request = "INSERT INTO document (Titre, Type, Contenu, Date_creation, Etat, Id_Utilisateur, Id_template) VALUES (:Titre, :Type, :Contenu, :Date_creation, :Etat, :Id_Utilisateur, :Id_template)";
@@ -149,16 +155,18 @@ class UserModel extends DBModel {
         return $result;
     }
 
+
+    /*
+    * Affecte la db
+    * Retourne tous les documents de la db - Pas utilisé actuellement
+    */
     function display_file(){
         $result = [];
         if (!$this->connected) {
-            // Something went wrong during the connection to the database.
-            // In this example, we simply do not perform the query...
-            // A real website should display a message for users to understand while they cannot log in
+            // Si il y a un probleme avec la connexion à la db
+            // Ici on n'affiche rien
             return $result;
         }
-        // The request uses the MD5() functions since password should not be stored
-        // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
         $request = "SELECT * FROM document";
         $statement = $this->db->prepare($request);
         $statement->execute();
@@ -166,16 +174,17 @@ class UserModel extends DBModel {
         return $result;
     }
 
+    /*
+    * Se base sur la fonction display_file() seulement limiter aux documents toujours en etat de modification ou refuser donc etat=1 ou =2
+    * Retourne tous les fichiers ayant pour etat 1 ou 2
+    */
     function display_file_modified(){
         $result = [];
         if (!$this->connected) {
-            // Something went wrong during the connection to the database.
-            // In this example, we simply do not perform the query...
-            // A real website should display a message for users to understand while they cannot log in
+            // Si il y a un probleme avec la connexion à la db
+            // Ici on n'affiche rien
             return $result;
         }
-        // The request uses the MD5() functions since password should not be stored
-        // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
         $request = "SELECT * FROM document WHERE Etat=1 OR Etat=2";
         $statement = $this->db->prepare($request);
         $statement->execute();
@@ -183,16 +192,17 @@ class UserModel extends DBModel {
         return $result;
     }
 
+    /*
+    * Se base sur la fonction display_file() seulement limiter aux documents toujours en etat de refus donc etat=2
+    * Retourne tous les fichiers ayant pour etat 2
+    */
     function display_file_refused(){
         $result = [];
         if (!$this->connected) {
-            // Something went wrong during the connection to the database.
-            // In this example, we simply do not perform the query...
-            // A real website should display a message for users to understand while they cannot log in
+            // Si il y a un probleme avec la connexion à la db
+            // Ici on n'affiche rien
             return $result;
         }
-        // The request uses the MD5() functions since password should not be stored
-        // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
         $request = "SELECT * FROM document WHERE Etat=2";
         $statement = $this->db->prepare($request);
         $statement->execute();
@@ -200,16 +210,17 @@ class UserModel extends DBModel {
         return $result;
     }
 
+    /*
+    * Se base sur la fonction display_file() seulement limiter aux documents toujours en etat à valider donc etat=4
+    * Retourne tous les fichiers ayant pour etat 4
+    */
     function display_file_to_validate(){
         $result = [];
         if (!$this->connected) {
-            // Something went wrong during the connection to the database.
-            // In this example, we simply do not perform the query...
-            // A real website should display a message for users to understand while they cannot log in
+            // Si il y a un probleme avec la connexion à la db
+            // Ici on n'affiche rien
             return $result;
         }
-        // The request uses the MD5() functions since password should not be stored
-        // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
         $request = "SELECT * FROM document WHERE Etat=4";
         $statement = $this->db->prepare($request);
         $statement->execute();
@@ -217,16 +228,17 @@ class UserModel extends DBModel {
         return $result;
     }
 
+    /*
+    * Se base sur la fonction display_file() seulement limiter aux documents toujours en etat de modification donc etat=3
+    * Retourne tous les fichiers ayant pour etat 3
+    */
     function display_file_archived(){
         $result = [];
         if (!$this->connected) {
-            // Something went wrong during the connection to the database.
-            // In this example, we simply do not perform the query...
-            // A real website should display a message for users to understand while they cannot log in
+            // Si il y a un probleme avec la connexion à la db
+            // Ici on n'affiche rien
             return $result;
         }
-        // The request uses the MD5() functions since password should not be stored
-        // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
         $request = "SELECT * FROM document WHERE Etat=3";
         $statement = $this->db->prepare($request);
         $statement->execute();
@@ -234,16 +246,17 @@ class UserModel extends DBModel {
         return $result;
     }
 
+    /*
+    * Se base sur la fonction display_file() seulement limiter aux documents appartenant à un Id_user
+    * Retourne tous les fichiers ayant pour Id_Utilisateur celui qu'on cherhce
+    */
     function getRecentFiles($Id_Utilisateur){
         $result = [];
         if (!$this->connected) {
-            // Something went wrong during the connection to the database.
-            // In this example, we simply do not perform the query...
-            // A real website should display a message for users to understand while they cannot log in
+            // Si il y a un probleme avec la connexion à la db
+            // Ici on n'affiche rien
             return $result;
         }
-        // The request uses the MD5() functions since password should not be stored
-        // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
         $request = "SELECT * FROM document WHERE Id_Utilisateur=:Id_Utilisateur ORDER BY Date_creation DESC;";
         $statement = $this->db->prepare($request);
         $statement->execute([
@@ -253,16 +266,17 @@ class UserModel extends DBModel {
         return $result;
     }
     
+    /*
+    * Questionne la db pour avoir le contenu d'un document repéré par son Id
+    * Retourne le contenu d'un fichier particulier
+    */
     function getWhatsInFile($Id){
         $result = [];
         if (!$this->connected) {
-            // Something went wrong during the connection to the database.
-            // In this example, we simply do not perform the query...
-            // A real website should display a message for users to understand while they cannot log in
+            // Si il y a un probleme avec la connexion à la db
+            // Ici on n'affiche rien
             return $result;
         }
-        // The request uses the MD5() functions since password should not be stored
-        // without any protection in the database (i.e., use MD5() to store and retrieve passwords)
         $request = "SELECT * FROM document WHERE Id=:Id";
         $statement = $this->db->prepare($request);
         $statement->execute([

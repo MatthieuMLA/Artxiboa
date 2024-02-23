@@ -7,15 +7,15 @@
         <title>Visualisation de fichier</title>
     </head>
     <body>
-        
-        <!-- PHP only used to display stuff -->
         <?php include_header_home(); ?>
         
         <?php include_menubar(); ?>
-        
-        <?php $newFile=$File['file']; ?>
 
+        <!-- Se ramener à un array et pas des arrays dans des arrays -->
+        <?php $newFile=$File['file']; ?>
         <?php $newFile=$newFile[0]; ?>
+
+        <!-- Formulaire qui peut être modifié (textarea) et qui renvoi les informations pertinentes du document (hidden) -->
         <form method='post' action='gestionModificationController.php'>
         <table>
             <tr>
@@ -44,6 +44,7 @@
         </table>
         <button class='enregistrerChangement'>Enregistrer les changements et envoyer à valider</button>
         </form>
+        
         <?php include_footer(); ?>
 
     </body>

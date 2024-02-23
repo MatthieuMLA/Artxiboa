@@ -7,8 +7,7 @@
         <title>Visualisation de fichier</title>
     </head>
     <body>
-        
-        <!-- PHP only used to display stuff -->
+
         <?php include_header_home(); ?>
         
         <?php include_menubar(); ?>
@@ -16,6 +15,8 @@
         <?php $newFile=$File['file']; ?>
 
         <?php $newFile=$newFile[0]; ?>
+
+        <!-- Formulaire qui peut être modifié (textarea) et qui renvoi les informations pertinentes du document (hidden) -->
         <form method='post' action='gestionValidationController.php'>
         <table>
             <tr>
@@ -42,6 +43,7 @@
                 <td><?php print_r($newFile['Date_creation']); ?></td>
             </tr>
         </table>
+        <!-- Permet de soit Valider (et modifier) ou Refuser (et modifier) le fichier en jouant sur la valeur du bouton -->
         <button class='enregistrerChangement' id="Valider" name="Valider" value='true'>Valider et archiver le fichier</button>
         <button class='enregistrerChangement' id="Valider" name="Valider" value='false'>Refuser le fichier</button>
         </form>

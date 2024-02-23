@@ -12,7 +12,7 @@ $dbname = "artxiboa";
 $user = "root";
 $pwd = "";
 
-// if we are on the server
+// si on est sur le server
 if (file_exists("/var/www/")) {
     $host = "localhost";
     $dbname = "the-db-name";

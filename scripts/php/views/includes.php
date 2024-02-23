@@ -1,12 +1,6 @@
 <?php
-/**
- * Simple PHP script example to showcase hwo HTML content
- * can be re-used across multiple HTML files
- * 
- * @author: w.delamare
- * @date: Dec. 2023
- */
-    //require(__DIR__."/../models/UserModel2.php");
+
+    // Afficher le header pour la page de connexion : Image + Titre
     function include_header() {
     ?>
     <header>
@@ -16,6 +10,7 @@
     <?php
     }
 
+    // Afficher les identifiants de connexion 
     function include_connexion_info() {
         ?>
         <h4>
@@ -35,7 +30,7 @@
         <?php
         }
         
-
+    // Afficher le header pour la page d'acceuil : Image + Titre + Nom de la personne connectée
     function include_header_home() {
         ?>
         <header>
@@ -46,6 +41,7 @@
         <?php
     }
 
+    // Afficher logout -> non utilisé actuellement
     function include_logout() {
         ?>
         <!-- A form to logout -->
@@ -60,6 +56,7 @@
         <?php
     }
 
+    // Afficher la barre de menu avec différent dropdown (dans gestion) selon le role des utlisateurs (employé simple ou supérieur hiérarchique)
     function include_menubar() {
         ?>
         <ul class="menubar">
@@ -79,6 +76,35 @@
         <?php
     }
 
+    // Continuité de la fonction include_menubar()
+    function dropdown_sup(){
+        ?>
+        <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Gestion</a>
+                    <div class="dropdown-content">
+                        <a href="gestionModificationController.php">Modifier des documents</a>
+                        <a href="gestionValidationController.php">Valider des documents</a>
+                    </div>
+        </li>
+    <?php
+    }
+
+    // Continuité de la fonction include_menubar()
+    function dropdown_normal(){
+        ?>
+        <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Gestion</a>
+                    <div class="dropdown-content">
+                        <a href="gestionModificationController.php">Modifier des documents</a>
+                        <a href="gestionRefusController.php">Voir les refus</a>
+                    </div>
+        </li>
+        <?php
+    }
+
+    // Trois prochaines fonctions sur les boutons pour la gestion des fichiers
+    // Dépendante du role
+    // Pas utilisé actuellement
     function include_gestion_button() {
         if ($_SESSION['Role'] == '1'){
             include_gestion_button_sup();
@@ -123,30 +149,7 @@
         <?php
     }
 
-    function dropdown_sup(){
-        ?>
-        <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Gestion</a>
-                    <div class="dropdown-content">
-                        <a href="gestionModificationController.php">Modifier des documents</a>
-                        <a href="gestionValidationController.php">Valider des documents</a>
-                    </div>
-        </li>
-    <?php
-    }
-
-    function dropdown_normal(){
-        ?>
-        <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Gestion</a>
-                    <div class="dropdown-content">
-                        <a href="gestionModificationController.php">Modifier des documents</a>
-                        <a href="gestionRefusController.php">Voir les refus</a>
-                    </div>
-        </li>
-        <?php
-    }
-
+    // Affichage de la page de création 
     function include_creation_buttons() {
         ?>
         <div class="buttoncrea">
@@ -175,6 +178,7 @@
         <?php
     }
 
+    // Affichage du formulaire pour se connecter
     function include_connexion_form() {
         ?>
         <form method="post" action="homeController.php" class="login-form">
@@ -210,6 +214,7 @@
     <?php
     }
 
+    // Affichage de document de la db sous forme de tableau 
     function include_display_file($RESULT){
         $nb = count($RESULT);
         echo "<p>" . $nb . " fichiers ont été trouvés.</p>";
@@ -237,6 +242,7 @@
         echo("</table>");
     }
 
+    // Meme chose que include_display_file(), le bouton de fin change
     function include_display_file_modify($RESULT){
         $nb = count($RESULT);
         echo "<p>" . $nb . " fichiers ont été trouvés.</p>";
@@ -264,6 +270,7 @@
         echo("</table>");
     }
 
+    // Meme chose que include_display_file(), le bouton de fin change
     function include_display_file_validate($RESULT){
         $nb = count($RESULT);
         echo "<p>" . $nb . " fichiers ont été trouvés.</p>";
@@ -291,6 +298,7 @@
         echo("</table>");
     }
 
+    // Affichage pour les pages en travaux
     function include_en_travaux(){
         ?>
         <main>
@@ -303,6 +311,7 @@
         <?php
     }
 
+    // Afficher la page d'acceuil et ses informations lambdas
     function include_accueil(){
         ?>
         <main>
@@ -315,7 +324,7 @@
         <?php
     }
 
-
+    // Afficher les outils pour creer une facture
     function create_facture() {
         ?>
         <h2>Information sur la facture</h2>
@@ -340,7 +349,8 @@
         <?php
     }
 
-
+    // Aficher les outils pour creer un devis
+    // Comme la fonction pour la facture, les noms changent 
     function create_devis() {
         ?>
         <h2>Information sur le devis</h2>
@@ -365,6 +375,7 @@
         <?php
     }
 
+    // Premiere version pour afficher les documents recents -> pas utilisé actuellement
     function include_recent_files() {
         ?>
         <main>
@@ -404,6 +415,7 @@
         <?php        
     }
 
+    // Deuxieme version pour afficher les documents récents, cette fois en questionnant la db
     function include_recent_files2(){ 
         echo "<div class='docRecent'>";
         ?><h4>Mes Documents récents</h4><?php
@@ -428,6 +440,7 @@
         echo "</div>";
     }
 
+    // Afficher les informations pour importer un fichier
     function include_importation(){
         ?>
         <h4>Importer un fichier</h4>
@@ -458,6 +471,7 @@
         <?php
     }
 
+    // Afficher un footer
     function include_footer() {
         ?>
         <footer>
@@ -466,7 +480,7 @@
         <?php
     }
 
-
+    // Si il y a un erreur
     function include_error_message($message) {
         echo "<p class='error_message'>" . $message . "</p>";
     }

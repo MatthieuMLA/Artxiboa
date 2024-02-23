@@ -17,8 +17,7 @@
         <title>Accueil</title>
     </head>
     <body>
-        
-        <!-- PHP only used to display stuff -->
+
         <?php include_header_home(); ?>
         
         <?php include_menubar(); ?>

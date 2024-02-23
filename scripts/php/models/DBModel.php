@@ -1,34 +1,26 @@
 <?php
-
-/**
- * Example class for handling database connection and requests.
- * The class has very few implemented methods since it is just meant to introduce an example
- * 
- * @author William Delamare
- * @created Dec. 2023
- */
 class DBModel {
 
-    // let's hide ou connection from others
+    // permet de cacher la connexion -> meilleur sécurité
     protected $db = null;
     protected $connected = false;
 
 
     /**
-     * Constructor
-     * takes care of connecting to the database
+     * Constructeur
+     * permet de se connecter à la base de données
      */
 
-     public function __construct() {
+    public function __construct() {
         $this->connected = $this->connect_to_db();
-     }
+    }
 
 
     /**
-     * Will try to connect to the pre-defined db
-     * Private since the constructor will manage the connection
+     * Pour se connecter à la base de données
+     * Seul le constructeur s'occupe de cette fonction donc on le met en privé
      *
-     * @return: true if the connection was successful, false otherwise
+     * @return: true si la connexion a pu se faire, sinon non
      */
     private function connect_to_db() {   
         require __DIR__. "/../env_settings.php";     
@@ -40,12 +32,5 @@ class DBModel {
             return false;
         }
     }
-
-
-    // other useful methods to interact with the database
-    // AND that are common to all models
-    // should be implemented here
-
-
 }
 

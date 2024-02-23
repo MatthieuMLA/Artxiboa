@@ -23,14 +23,13 @@
         <title>Artxiboa - Se Connecter</title>
     </head>
     <body>
-        
-        <!-- PHP only used to display stuff -->
+
         <?php include_header(); ?>
         <?php include_connexion_form(); ?>
         <?php include_connexion_info(); ?>
 
         <?php 
-            // if an error happened
+            // si il y a une erreur
             if (isset($something_to_say)) {
                 include_error_message($something_to_say);
             }

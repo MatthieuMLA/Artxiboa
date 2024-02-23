@@ -1,26 +1,14 @@
 <?php
-    /**
-     * Example of a simple controller
-     * It will call the model to get the data
-     * and then decide which view to display (login form or welcome page)
-     * 
-     * @author: w.delamare
-     * @date: Dec. 2023
-     */
 
     
-    // do all necessary includes first
-    // __DIR__ allows you to use relative paths explicitly
+    // Inclure le model
     require(__DIR__."/scripts/php/models/UserModel2.php");
 
+    // Recupération des fichiers d'archives
     $userModel = new UserModel();
     $RESULT = $userModel->display_file_archived();;
 
-    // Now, let's call the view.
-    // If something to say, the view will display it
-    // Otherwise, the view will simply display the login form
-
-    // before calling the view, just include useful view-related functions
+    // Inclure les includes pour les vues
     require(__DIR__."/scripts/php/views/includes.php");
 
 

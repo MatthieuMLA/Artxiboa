@@ -14,13 +14,11 @@
         <title>Artxiboa - Gestion</title>
     </head>
     <body>
-        
-        <!-- PHP only used to display stuff -->
         <?php include_header_home(); ?>
         <?php include_menubar(); ?>
         <?php include_en_travaux(); ?>
         <?php 
-            // if an error happened
+            // Si il y a une erreur
             if (isset($something_to_say)) {
                 include_error_message($something_to_say);
             }
