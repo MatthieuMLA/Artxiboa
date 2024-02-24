@@ -6,7 +6,7 @@
 
     // Recupération des fichiers d'archives
     $userModel = new UserModel();
-    $RESULT = $userModel->display_file_archived();;
+    $RESULT = $userModel->display_file_archived();
 
     // Inclure les includes pour les vues
     require(__DIR__."/scripts/php/views/includes.php");

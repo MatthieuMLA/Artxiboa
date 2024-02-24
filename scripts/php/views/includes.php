@@ -4,7 +4,7 @@
     function include_header() {
     ?>
     <header>
-        <img src="media/brandLogo.png" alt="Brand Logo" height="75" title="Artxiboa"></a>
+        <img src="media/brandLogo.png" alt="Brand Logo" height="75" title="Artxiboa">
         <h1>Artxiboa</h1>
     </header>
     <?php
@@ -34,7 +34,7 @@
     function include_header_home() {
         ?>
         <header>
-            <img src="media/brandLogo.png" alt="Brand Logo" height="75" title="Artxiboa"></a>
+            <img src="media/brandLogo.png" alt="Brand Logo" height="75" title="Artxiboa">
             <h1>Artxiboa</h1>
             <div class="div1"><h3><?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname']; ?></h3></div>
         </header>
@@ -154,21 +154,21 @@
         ?>
         <div class="buttoncrea">
             <div>
-                <img src="media/devis.png" alt="Devis" height="170"></a>
+                <img src="media/devis.png" alt="Devis" height="170">
                 <form method="post" action="creationDevisController.php">
                     <button>Créer un devis</button>
                 </form>
                 <p>Un devis est un document détaillant les coûts et les conditions d'une transaction commerciale proposée. Il est généralement envoyé avant la conclusion du contrat pour informer le client des coûts et conditions.</p>
             </div>
             <div>
-                <img src="media/facture.png" alt="Facture" height="170"></a>
+                <img src="media/facture.png" alt="Facture" height="170">
                 <form method="post" action="creationFactureController.php">
                     <button>Créer une facture</button>
                 </form>
                 <p>Une facture est un document qui détaille les biens ou services fournis à un client, avec leurs prix et les conditions de paiement. Elle est émise après la livraison des biens ou services et constitue une demande de paiement.</p>
             </div>
             <div>
-                <img src="media/import.png" alt="Importer" height="170"></a>
+                <img src="media/import.png" alt="Importer" height="170">
                 <form method="post" action="importationController.php">
                     <button>Importer un document</button>
                 </form>
@@ -186,16 +186,16 @@
                 <div>
                     <div>
                     Nom d'utilisateur
-                    <label for="warning">
+                    <label>
                     *
+                    </label>
                     </div>
-                </label>
                 <input type="text" placeholder="login" id="login" name="login" required>
                 </div>
                 <div>
                     <div>
                     Mot de passe
-                    <label for="warning">
+                    <label>
                     *
                     </label>
                     </div>
@@ -203,10 +203,10 @@
                 </div>
                 <div>
                 <label for="button">
-                <button class="up" type="submit">Se connecter</button>
+                <button id="button" class="up" type="submit">Se connecter</button>
                 </label>
                 </div>
-                <label for="warning">
+                <label>
                     * Champs obligatoires
                 </label>
             </fieldset>
@@ -303,7 +303,7 @@
         ?>
         <main>
             <div class="travaux">
-                <img src="media/enTravaux.png" alt="Construction"></a>
+                <img src="media/enTravaux.png" alt="Construction">
                 <h1>Notre site web est actuellement en construction !</h1>
                 <p>Nous vous remercions de votre patience et nous serons de retour bientôt avec une toute nouvelle apparence et des fonctionnalités améliorées.</p>
             </div>
