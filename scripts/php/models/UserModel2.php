@@ -55,7 +55,7 @@ class UserModel extends DBModel {
             "ContenuFile" => $ContenuFile,
             "IdFile" => $IdFile
         ]);
-        $entries = $statement->fetchAll();
+        
     }
 
     /*
@@ -75,7 +75,7 @@ class UserModel extends DBModel {
         $statement->execute([
             "IdFile" => $IdFile
         ]);
-        $entries = $statement->fetchAll();
+        
     }
 
     /*
@@ -95,7 +95,7 @@ class UserModel extends DBModel {
         $statement->execute([
             "IdFile" => $IdFile
         ]);
-        $entries = $statement->fetchAll();
+        
     }
 
     /*
@@ -115,7 +115,7 @@ class UserModel extends DBModel {
         $statement->execute([
             "IdFile" => $IdFile
         ]);
-        $entries = $statement->fetchAll();
+        
     }
 
     /*
@@ -142,16 +142,23 @@ class UserModel extends DBModel {
             "Id_Utilisateur" => $Id_Utilisateur,
             "Id_template" => $Id_template
         ]);
-        $entries = $statement->fetchAll();
-        if (count($entries) == 1) {
-            $result["Titre"] = $entries[0]['Titre'];
-            $result["Type"] = $entries[0]['Type'];
-            $result["Contenu"] = $entries[0]['Contenu'];
-            $result["Date_creation"] = $entries[0]['Date_creation'];
-            $result["Etat"] = $entries[0]['Etat'];
-            $result["Id_Utilisateur"] = $entries[0]['Id_Utilisateur'];
-            $result["Id_template"] = $entries[0]['Id_template'];
-        }
+        //$entries = $statement->fetchAll();
+        //if (count($entries) == 1) {
+        //    $result["Titre"] = $entries[0]['Titre'];
+        //    $result["Type"] = $entries[0]['Type'];
+        //    $result["Contenu"] = $entries[0]['Contenu'];
+        //    $result["Date_creation"] = $entries[0]['Date_creation'];
+        //    $result["Etat"] = $entries[0]['Etat'];
+        //    $result["Id_Utilisateur"] = $entries[0]['Id_Utilisateur'];
+        //    $result["Id_template"] = $entries[0]['Id_template'];
+        //}
+        $result["Titre"] = $Titre;
+        $result["Type"] = $Type;
+        $result["Contenu"] = $Contenu;
+        $result["Date_creation"] = $Date_creation;
+        $result["Etat"] = $Etat;
+        $result["Id_Utilisateur"] = $Id_Utilisateur;
+        $result["Id_template"] = $Id_template;
         return $result;
     }
 
