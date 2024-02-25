@@ -19,12 +19,12 @@
         }
         else {
             // si il y a un probleme
-            $something_to_say = "Missing fields";  
+            $something_to_say = "";  
         }
     }
     else {
         // si il y a un probleme
-        $something_to_say = "Missing fields";  
+        $something_to_say = "";  
     }  
     
     // Inclure les includes necessaires à la vue

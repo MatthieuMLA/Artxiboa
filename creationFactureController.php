@@ -20,7 +20,7 @@
         }
         else {
             // si il y a un problème
-            $something_to_say = "Missing fields";  
+            $something_to_say = "";  
         }
     }
     else {
