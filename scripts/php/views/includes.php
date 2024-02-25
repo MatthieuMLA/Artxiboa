@@ -71,7 +71,7 @@
                 }?>
 
             <li><a href="archiveController.php">Archive</a></li>
-            <li><a class="active" type="submit" href="index.php">Déconnexion</a></li>
+            <li><a href="index.php">Déconnexion</a></li>
         </ul>
         <?php
     }
@@ -421,9 +421,9 @@
         ?><h4>Mes Documents récents</h4><?php
         echo "<table>";
         echo "<tr>";
-        echo "<th>Type de fichier</td>";
-        echo "<th>Nom de fichier</td>";
-        echo "<th>Identifiant du fichier</td>";
+        echo "<th>Type de fichier</th>";
+        echo "<th>Nom de fichier</th>";
+        echo "<th>Identifiant du fichier</th>";
         echo "</tr>";
         $RECENTFILES = $_SESSION['recentfiles'];
         foreach($RECENTFILES as $res){
