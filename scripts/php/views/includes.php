@@ -218,34 +218,36 @@
     function include_display_file($RESULT) {
         $nb = count($RESULT);
         echo "<p>$nb fichiers ont été trouvés.</p>";
-        //echo "<form method='post' action='visualisationController.php' class='file-form'>";
         echo "<table class='display'>";
-        echo "<thead>
-                <tr>
-                    <td>Titre</td>
-                    <td>Type du document</td>
-                    <td>Identifiant du modificateur</td>
-                    <td>Date de creation</td>
-                    <td>Action</td>
-                </tr>
-            </thead>";
-        echo "<tbody>";
+            echo "<thead>
+                    <tr>
+                        <td>Titre</td>
+                        <td>Type du document</td>
+                        <td>Identifiant du modificateur</td>
+                        <td>Date de creation</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>";
+        echo "</table>";
     
         foreach ($RESULT as $res) {
+            echo "<form method='post' action='visualisationController.php' class='file-form'>";
+            echo "<table class='display'>";
+            echo "<tbody>";
             echo "<tr>";
             echo "<td>" . htmlspecialchars($res["Titre"]) . "</td>";
             echo "<td>" . htmlspecialchars($res["Type"]) . "</td>";
             echo "<td>" . htmlspecialchars($res["Id_Utilisateur"]) . "</td>";
             echo "<td>" . htmlspecialchars($res["Date_creation"]) . "</td>";
             echo "<td>";
-            echo "<button type='submit' name='IdFile' value='" . htmlspecialchars($res["Id"]) . "'> Voir le fichier </button>";
             echo "<input type='hidden' name='IdFile' value='" . htmlspecialchars($res["Id"]) . "'>";
+            echo "<button type='submit'> Voir le fichier </button>";
             echo "</td>";
             echo "</tr>";
+            echo "</tbody>";
+            echo "</table>";
+            echo "</form>";
         }
-        echo "</tbody>";
-        echo "</table>";
-        //echo "</form>";
     }
 
     // Meme chose que include_display_file(), le bouton de fin change
@@ -287,29 +289,37 @@
     // Meme chose que include_display_file(), le bouton de fin change
     function include_display_file_validate($RESULT){
         $nb = count($RESULT);
-        echo "<p>" . $nb . " fichiers ont été trouvés.</p>";
-        echo("<table class='display'>");
-        echo("<tr>");
-        echo("<td>Titre</td>");
-        echo("<td>Type de document</td>");
-        echo("<td>Identifiant du modificateur</td>");
-        echo("<td>Date de création</td>");
-        echo("</tr>");
-        foreach($RESULT as $res){
+        echo "<p>$nb fichiers ont été trouvés.</p>";
+        echo "<table class='display'>";
+            echo "<thead>
+                    <tr>
+                        <td>Titre</td>
+                        <td>Type du document</td>
+                        <td>Identifiant du modificateur</td>
+                        <td>Date de creation</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>";
+        echo "</table>";
+    
+        foreach ($RESULT as $res) {
             echo "<form method='post' action='gestionValiderController.php' class='file-form'>";
-            echo("<tr>");
-            echo "<td>" . $res["Titre"] . "</td>";
-            echo "<td>" . $res["Type"] . "</td>";
-            echo "<td>" . $res["Id_Utilisateur"] . "</td>";
-            echo "<td>" . $res["Date_creation"] . "</td>";
-            echo "<td> <button> Voir le fichier </button> </td>";
-            echo("</tr>");
-            ?>
-            <input type='text' id='IdFile' name='IdFile' value=<?php echo  $res["Id"]?> hidden>
-            <?php
+            echo "<table class='display'>";
+            echo "<tbody>";
+            echo "<tr>";
+            echo "<td>" . htmlspecialchars($res["Titre"]) . "</td>";
+            echo "<td>" . htmlspecialchars($res["Type"]) . "</td>";
+            echo "<td>" . htmlspecialchars($res["Id_Utilisateur"]) . "</td>";
+            echo "<td>" . htmlspecialchars($res["Date_creation"]) . "</td>";
+            echo "<td>";
+            echo "<input type='hidden' name='IdFile' value='" . htmlspecialchars($res["Id"]) . "'>";
+            echo "<button type='submit'> Voir le fichier </button>";
+            echo "</td>";
+            echo "</tr>";
+            echo "</tbody>";
+            echo "</table>";
             echo "</form>";
         }
-        echo("</table>");
     }
 
     // Affichage pour les pages en travaux
