@@ -217,8 +217,8 @@
     // Affichage de document de la db sous forme de tableau 
     function include_display_file($RESULT) {
         $nb = count($RESULT);
-        echo "<p>$nb files have been found.</p>";
-        echo "<form method='post' action='visualisationController.php' class='file-form'>";
+        echo "<p>$nb fichiers ont été trouvés.</p>";
+        //echo "<form method='post' action='visualisationController.php' class='file-form'>";
         echo "<table class='display'>";
         echo "<thead>
                 <tr>
@@ -228,7 +228,7 @@
                     <td>Date de creation</td>
                     <td>Action</td>
                 </tr>
-              </thead>";
+            </thead>";
         echo "<tbody>";
     
         foreach ($RESULT as $res) {
@@ -238,14 +238,14 @@
             echo "<td>" . htmlspecialchars($res["Id_Utilisateur"]) . "</td>";
             echo "<td>" . htmlspecialchars($res["Date_creation"]) . "</td>";
             echo "<td>";
-            echo "<button type='submit' name='view_file' value='" . htmlspecialchars($res["Id"]) . "'> Voir le fichier </button>";
+            echo "<button type='submit' name='IdFile' value='" . htmlspecialchars($res["Id"]) . "'> Voir le fichier </button>";
             echo "<input type='hidden' name='IdFile' value='" . htmlspecialchars($res["Id"]) . "'>";
             echo "</td>";
             echo "</tr>";
         }
         echo "</tbody>";
         echo "</table>";
-        echo "</form>";
+        //echo "</form>";
     }
 
     // Meme chose que include_display_file(), le bouton de fin change
@@ -253,30 +253,35 @@
         $nb = count($RESULT);
         echo "<p>$nb fichiers ont été trouvés.</p>";
         echo "<table class='display'>";
-        echo "<thead>
-            <tr>
-                <td>Titre</td>
-                <td>Type du document</td>
-                <td>Identifiant du modificateur</td>
-                <td>Date de creation</td>
-                <td>Action</td>
-            </tr>
-          </thead>";
-    echo "<tbody>";
+            echo "<thead>
+                    <tr>
+                        <td>Titre</td>
+                        <td>Type du document</td>
+                        <td>Identifiant du modificateur</td>
+                        <td>Date de creation</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>";
+        echo "</table>";
     
         foreach ($RESULT as $res) {
             echo "<form method='post' action='gestionModifierController.php' class='file-form'>";
+            echo "<table class='display'>";
+            echo "<tbody>";
             echo "<tr>";
             echo "<td>" . htmlspecialchars($res["Titre"]) . "</td>";
             echo "<td>" . htmlspecialchars($res["Type"]) . "</td>";
             echo "<td>" . htmlspecialchars($res["Id_Utilisateur"]) . "</td>";
             echo "<td>" . htmlspecialchars($res["Date_creation"]) . "</td>";
-            echo "<td> <button type='submit' name='modify_file' value='" . htmlspecialchars($res["Id"]) . "'> Modifier le fichier </button> </td>";
-            echo "</tr>";
+            echo "<td>";
             echo "<input type='hidden' name='IdFile' value='" . htmlspecialchars($res["Id"]) . "'>";
+            echo "<button type='submit'> Modifier le fichier </button>";
+            echo "</td>";
+            echo "</tr>";
+            echo "</tbody>";
+            echo "</table>";
             echo "</form>";
         }
-        echo "</table>";
     }
 
     // Meme chose que include_display_file(), le bouton de fin change

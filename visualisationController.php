@@ -6,7 +6,7 @@
     // def variable globale
     $File = array();
 
-    // si provient d'un ofrmulaire
+    // si provient d'un formulaire
     if (isset($_POST['IdFile'])) {
 
         // check isi vide
