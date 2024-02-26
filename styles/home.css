@@ -29,10 +29,10 @@ h1{
 
 h3{
     color: #e0af90;
-    &:hover,
-    &:focus { 
-        color: #DDD0C8;
-    }
+}
+
+h3:focus, h3:hover{
+    color:#DDD0C8;
 }
 
 .flex-container {
@@ -76,13 +76,12 @@ li a:hover:not(.active) {
 li a.active {
     background-color: #323232;
     transition: 0.25s;
-    
-    &:hover,
-    &:focus { 
-        color: #DDD0C8;
-        background-color: #aa1504;
-        font-size: larger;
-    }
+}
+
+li a.active:hover,  li a.active:focus{
+    color: #DDD0C8;
+    background-color: #aa1504;
+    font-size: larger;
 }
 
 #customers {
@@ -247,13 +246,13 @@ li a:focus {
     width: 100%;
     height: 80px;
     text-align: center;
+}
 
-    &:hover { 
-        color: #323232;
-        background-color: #cdcdc7;
-        border-color: #cdcdc7;
-        font-weight: bold;
-    }
+.buttoncrea button:hover{
+    color: #323232;
+    background-color: #cdcdc7;
+    border-color: #cdcdc7;
+    font-weight: bold;
 }
 
 .buttoncrea div {
@@ -307,9 +306,10 @@ h2{
 
 .box_crea input{
     width: 100%;
-    &:focus { 
-        border: blue thin;
-    }
+}
+
+.box_crea input:focus{
+    border: blue thin;
 }
 
 .section_a_remplir{
@@ -359,9 +359,10 @@ table tr td {
 
 .docRecent tr {
     margin: 10px;
-    &:hover{ 
-        color: #54504d;
-    }
+}
+
+.docRecent tr:hover {
+    color: #54504d;
 }
 
 .docRecent tr td button{

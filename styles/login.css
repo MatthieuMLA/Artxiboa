@@ -85,7 +85,6 @@ input {
 	border: none;
 	outline: none;
 	border-bottom: .2em solid #DDD0C8;
-	background: rgba(#DDD0C8, .2);
 	border-radius: .2em .2em 0 0;
 	padding: .4em;
 	color: #4d4946;
@@ -93,7 +92,6 @@ input {
 
 label{
     color: red;
-    text-size-adjust: 10px;
     margin-bottom: 15px;
 }
 
@@ -156,23 +154,22 @@ button {
     color: #323232;
     transition: 0.25s;
     background-color: white;
-    
-    &:hover,
-    &:focus { 
-        color: #323232;
-        background-color: #f3e4da;
-        font-size:larger;
-    }
 }
+
+button:hover, button:focus {  
+    color: #323232;
+    background-color: #f3e4da;
+    font-size:larger;
+    }
+
 
 input {  
     color: #323232;
     transition: 0.25s;
     background-color: white;
-    
-    &:hover,
-    &:focus { 
-        color: #323232;
-        background-color: #f3e4da;
-    }
 }
+
+input:hover, input:focus {  
+    color: #323232;
+    background-color: #f3e4da;
+    }
